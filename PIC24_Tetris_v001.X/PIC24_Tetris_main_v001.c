@@ -21,7 +21,39 @@
 #pragma config FNOSC = FRCPLL      // Fast RC Oscillator with PLL module (FRCPLL)
 
 #include "xc.h"
+#include "PIC24_setup.h"
+
 
 int main(void) {
+    
+    _IC1IE = 0;
+    
+    //Setup
+    initPIC();
+    initTimer3();
+    initIC1();
+    
+    _IC1IE = 1;
+
+//    _TRISB15 = 1;
+
+    //Main game loop
+    while (1) {
+
+//        if(buttPress){
+//           LATB = 0b111100000;
+//        } else {
+//            LATB = 0;
+//        }
+//        
+//        if (PORTA != 0xf) {
+//            LATB = 0b111100000;
+//        } else {
+//            LATB = 0;
+//        }
+
+        LATB = 0;
+    }
+
     return 0;
 }
