@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=PIC24_Tetris_main_v001.c PIC24_setup.c
+SOURCEFILES_QUOTED_IF_SPACED=PIC24_Tetris_main_v001.c PIC24_setup.c LCD_setup.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PIC24_Tetris_main_v001.o ${OBJECTDIR}/PIC24_setup.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/PIC24_Tetris_main_v001.o.d ${OBJECTDIR}/PIC24_setup.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/PIC24_Tetris_main_v001.o ${OBJECTDIR}/PIC24_setup.o ${OBJECTDIR}/LCD_setup.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/PIC24_Tetris_main_v001.o.d ${OBJECTDIR}/PIC24_setup.o.d ${OBJECTDIR}/LCD_setup.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/PIC24_Tetris_main_v001.o ${OBJECTDIR}/PIC24_setup.o
+OBJECTFILES=${OBJECTDIR}/PIC24_Tetris_main_v001.o ${OBJECTDIR}/PIC24_setup.o ${OBJECTDIR}/LCD_setup.o
 
 # Source Files
-SOURCEFILES=PIC24_Tetris_main_v001.c PIC24_setup.c
+SOURCEFILES=PIC24_Tetris_main_v001.c PIC24_setup.c LCD_setup.c
 
 
 
@@ -109,6 +109,13 @@ ${OBJECTDIR}/PIC24_setup.o: PIC24_setup.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  PIC24_setup.c  -o ${OBJECTDIR}/PIC24_setup.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/PIC24_setup.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
 	@${FIXDEPS} "${OBJECTDIR}/PIC24_setup.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/LCD_setup.o: LCD_setup.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LCD_setup.o.d 
+	@${RM} ${OBJECTDIR}/LCD_setup.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  LCD_setup.c  -o ${OBJECTDIR}/LCD_setup.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/LCD_setup.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/LCD_setup.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/PIC24_Tetris_main_v001.o: PIC24_Tetris_main_v001.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -123,6 +130,13 @@ ${OBJECTDIR}/PIC24_setup.o: PIC24_setup.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/PIC24_setup.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  PIC24_setup.c  -o ${OBJECTDIR}/PIC24_setup.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/PIC24_setup.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
 	@${FIXDEPS} "${OBJECTDIR}/PIC24_setup.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/LCD_setup.o: LCD_setup.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LCD_setup.o.d 
+	@${RM} ${OBJECTDIR}/LCD_setup.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  LCD_setup.c  -o ${OBJECTDIR}/LCD_setup.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/LCD_setup.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp=${DFP_DIR}/xc16
+	@${FIXDEPS} "${OBJECTDIR}/LCD_setup.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

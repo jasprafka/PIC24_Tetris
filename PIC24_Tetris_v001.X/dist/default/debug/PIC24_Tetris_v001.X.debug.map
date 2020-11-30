@@ -4,10 +4,15 @@ Tool Name:
   c:\program files\microchip\xc16\v1.50\bin\bin\..\bin/elf-ld.exe
 
 Command:
+  -TC:\\Users\\Jacob\\AppData\\Local\\Temp\\tmp00000268.00 \
+  -TC:\\Users\\Jacob\\AppData\\Local\\Temp\\tmp00000268.01 \
+  -TC:\\Users\\Jacob\\AppData\\Local\\Temp\\tmp00000268.02 \
+  -TC:\\Users\\Jacob\\AppData\\Local\\Temp\\tmp00000268.03 \
+  -TC:\\Users\\Jacob\\AppData\\Local\\Temp\\tmp00000268.04 \
   -p24FJ64GA002 \
   --mdfp=C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC24F-GA-GB_DFP/1.2.101/xc16 \
   -o \
-  dist/default/production/PIC24_Tetris_v001.X.production.elf \
+  dist/default/debug/PIC24_Tetris_v001.X.debug.elf \
   -Lc:/program files/microchip/xc16/v1.50/bin/bin/.. \
   -LC:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC24F-GA-GB_DFP/1.2.101/xc16/bin/../support/PIC24F/gld \
   -Lc:/program files/microchip/xc16/v1.50/bin/bin/../../lib \
@@ -18,11 +23,14 @@ Command:
   -Lc:/program files/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33C/gld \
   -Lc:/program files/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v1.50/bin/bin/../../support/dsPIC33F/gld \
-  build/default/production/PIC24_Tetris_main_v001.o \
-  build/default/production/PIC24_setup.o \
-  build/default/production/LCD_setup.o \
+  build/default/debug/PIC24_Tetris_main_v001.o \
+  build/default/debug/PIC24_setup.o \
+  build/default/debug/LCD_setup.o \
   --defsym=__MPLAB_BUILD=1 \
-  -Tp24FJ64GA002.gld.00 \
+  --defsym=__MPLAB_DEBUG=1 \
+  --defsym=__DEBUG=1 \
+  --defsym=__MPLAB_DEBUGGER_PK3=1 \
+  -Tp24FJ64GA002.gld.05 \
   --stack=16 \
   --check-sections \
   --data-init \
@@ -34,10 +42,10 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/PIC24_Tetris_v001.X.production.map \
+  -Map=dist/default/debug/PIC24_Tetris_v001.X.debug.map \
   --report-mem \
   --memorysummary \
-  dist/default/production/memoryfile.xml \
+  dist/default/debug/memoryfile.xml \
   -start-group \
   --library=lega-pic30-elf \
   --library=m-elf \
@@ -67,17 +75,22 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x13c           0x1da  (474)
-.text                        0x33c               0x13c           0x1da  (474)
+.text                        0x33c               0x138           0x1d4  (468)
 
-                 Total "program" memory used (bytes):          0x3b4  (948) 1%
+                 Total "program" memory used (bytes):          0x3ae  (942) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
+reserve_data_0x800           0x800                0x20            0x20  (32)
+reserve_data_0x820           0x820                 0x2             0x2  (2)
+reserve_data_0x822           0x822                 0x2             0x2  (2)
+reserve_data_0x824           0x824                 0x2             0x2  (2)
+reserve_data_0x826           0x826                0x2a            0x2a  (42)
 
-                 Total "data" memory used (bytes):              0  (0) 
+                 Total "data" memory used (bytes):           0x50  (80) <1%
 
 
 Dynamic Memory Usage
@@ -85,9 +98,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x800                              0x2000  (8192)
+stack                        0x850                              0x1fb0  (8112)
 
-                 Maximum dynamic memory (bytes):         0x2000  (8192)
+                 Maximum dynamic memory (bytes):         0x1fb0  (8112)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -104,18 +117,18 @@ External Symbols in Program Memory (by address):
                   0x000336                  __DefaultInterrupt
                   0x00033c                  _lcdCmd
                   0x00035e                  _lcdData
-                  0x000380                  _main
-                  0x0003e8                  _initPIC
-                  0x000408                  _initIC1
-                  0x00044e                  _initTimer3
-                  0x00045c                  _LCD_cmd
-                  0x00046a                  _LCD_data
-                  0x000472                  _initLCD
+                  0x00037c                  _main
+                  0x0003e4                  _initPIC
+                  0x000404                  _initIC1
+                  0x00044a                  _initTimer3
+                  0x000458                  _LCD_cmd
+                  0x000466                  _LCD_data
+                  0x00046e                  _initLCD
 
 External Symbols in Program Memory (by name):
 
-                  0x00045c                  _LCD_cmd
-                  0x00046a                  _LCD_data
+                  0x000458                  _LCD_cmd
+                  0x000466                  _LCD_data
                   0x000336                  __DefaultInterrupt
                   0x0002e0                  __IC1Interrupt
                   0x0002c8                  __T1Interrupt
@@ -124,13 +137,13 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000408                  _initIC1
-                  0x000472                  _initLCD
-                  0x0003e8                  _initPIC
-                  0x00044e                  _initTimer3
+                  0x000404                  _initIC1
+                  0x00046e                  _initLCD
+                  0x0003e4                  _initPIC
+                  0x00044a                  _initTimer3
                   0x00033c                  _lcdCmd
                   0x00035e                  _lcdData
-                  0x000380                  _main
+                  0x00037c                  _main
 
 Memory Configuration
 
@@ -147,10 +160,38 @@ CONFIG1          0x00abfe           0x000002
 
 Linker script and memory map
 
-LOAD build/default/production/PIC24_Tetris_main_v001.o
-LOAD build/default/production/PIC24_setup.o
-LOAD build/default/production/LCD_setup.o
+
+reserve_data_0x800
+                    0x0800         0x20
+                    0x0820                  . = 0x20
+ *fill*             0x0800         0x2000
+
+reserve_data_0x820
+                    0x0820          0x2
+                    0x0822                  . = 0x2
+ *fill*             0x0820          0x200
+
+reserve_data_0x822
+                    0x0822          0x2
+                    0x0824                  . = 0x2
+ *fill*             0x0822          0x200
+
+reserve_data_0x824
+                    0x0824          0x2
+                    0x0826                  . = 0x2
+ *fill*             0x0824          0x200
+
+reserve_data_0x826
+                    0x0826         0x2a
+                    0x0850                  . = 0x2a
+ *fill*             0x0826         0x2a00
+LOAD build/default/debug/PIC24_Tetris_main_v001.o
+LOAD build/default/debug/PIC24_setup.o
+LOAD build/default/debug/LCD_setup.o
                     0x0001                  __MPLAB_BUILD = 0x1
+                    0x0001                  __MPLAB_DEBUG = 0x1
+                    0x0001                  __DEBUG = 0x1
+                    0x0001                  __MPLAB_DEBUGGER_PK3 = 0x1
 LOAD pPIC24Fxxx
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libfx-elf.a
                     0xabfc                  __CONFIG2 = 0xabfc
@@ -181,9 +222,9 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002c8         0x18 build/default/production/PIC24_Tetris_main_v001.o
+ .isr.text        0x0002c8         0x18 build/default/debug/PIC24_Tetris_main_v001.o
                   0x0002c8                  __T1Interrupt
- .isr.text        0x0002e0         0x56 build/default/production/PIC24_setup.o
+ .isr.text        0x0002e0         0x56 build/default/debug/PIC24_setup.o
                   0x0002e0                  __IC1Interrupt
                   0x000322                  __T3Interrupt
  .isr             0x000336          0x4 default_isr
@@ -211,34 +252,34 @@ __CONFIG1
 
 .debug_info       0x000000       0x19af
  *(.debug_info)
- .debug_info      0x000000        0x995 build/default/production/PIC24_Tetris_main_v001.o
- .debug_info      0x000995        0xc84 build/default/production/PIC24_setup.o
- .debug_info      0x001619        0x396 build/default/production/LCD_setup.o
+ .debug_info      0x000000        0x995 build/default/debug/PIC24_Tetris_main_v001.o
+ .debug_info      0x000995        0xc84 build/default/debug/PIC24_setup.o
+ .debug_info      0x001619        0x396 build/default/debug/LCD_setup.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x32e
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x137 build/default/production/PIC24_Tetris_main_v001.o
- .debug_abbrev    0x000137        0x136 build/default/production/PIC24_setup.o
- .debug_abbrev    0x00026d         0xc1 build/default/production/LCD_setup.o
+ .debug_abbrev    0x000000        0x137 build/default/debug/PIC24_Tetris_main_v001.o
+ .debug_abbrev    0x000137        0x136 build/default/debug/PIC24_setup.o
+ .debug_abbrev    0x00026d         0xc1 build/default/debug/LCD_setup.o
 
-.debug_line       0x000000        0x3b5
+.debug_line       0x000000        0x3b4
  *(.debug_line)
- .debug_line      0x000000        0x160 build/default/production/PIC24_Tetris_main_v001.o
- .debug_line      0x000160        0x141 build/default/production/PIC24_setup.o
- .debug_line      0x0002a1        0x114 build/default/production/LCD_setup.o
+ .debug_line      0x000000        0x15f build/default/debug/PIC24_Tetris_main_v001.o
+ .debug_line      0x00015f        0x141 build/default/debug/PIC24_setup.o
+ .debug_line      0x0002a0        0x114 build/default/debug/LCD_setup.o
 
 .debug_frame      0x000000        0x188
  *(.debug_frame)
- .debug_frame     0x000000         0x7e build/default/production/PIC24_Tetris_main_v001.o
- .debug_frame     0x00007e         0xa8 build/default/production/PIC24_setup.o
- .debug_frame     0x000126         0x62 build/default/production/LCD_setup.o
+ .debug_frame     0x000000         0x7e build/default/debug/PIC24_Tetris_main_v001.o
+ .debug_frame     0x00007e         0xa8 build/default/debug/PIC24_setup.o
+ .debug_frame     0x000126         0x62 build/default/debug/LCD_setup.o
 
 .debug_str        0x000000         0x7c
  *(.debug_str)
- .debug_str       0x000000         0x2e build/default/production/PIC24_Tetris_main_v001.o
- .debug_str       0x00002e         0x45 build/default/production/PIC24_setup.o
- .debug_str       0x000073          0x9 build/default/production/LCD_setup.o
+ .debug_str       0x000000         0x2e build/default/debug/PIC24_Tetris_main_v001.o
+ .debug_str       0x00002e         0x45 build/default/debug/PIC24_setup.o
+ .debug_str       0x000073          0x9 build/default/debug/LCD_setup.o
 
 .debug_loc
  *(.debug_loc)
@@ -250,11 +291,11 @@ __CONFIG1
                   0x000000         0xd6
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x43 build/default/production/PIC24_Tetris_main_v001.o
+                  0x000000         0x43 build/default/debug/PIC24_Tetris_main_v001.o
  .debug_pubnames
-                  0x000043         0x5c build/default/production/PIC24_setup.o
+                  0x000043         0x5c build/default/debug/PIC24_setup.o
  .debug_pubnames
-                  0x00009f         0x37 build/default/production/LCD_setup.o
+                  0x00009f         0x37 build/default/debug/LCD_setup.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -262,11 +303,11 @@ __CONFIG1
 .debug_aranges    0x000000         0x48
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/PIC24_Tetris_main_v001.o
+                  0x000000         0x18 build/default/debug/PIC24_Tetris_main_v001.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/PIC24_setup.o
+                  0x000018         0x18 build/default/debug/PIC24_setup.o
  .debug_aranges
-                  0x000030         0x18 build/default/production/LCD_setup.o
+                  0x000030         0x18 build/default/debug/LCD_setup.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -848,26 +889,26 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/production/PIC24_Tetris_v001.X.production.elf elf32-pic30)
+OUTPUT(dist/default/debug/PIC24_Tetris_v001.X.debug.elf elf32-pic30)
 LOAD default_isr
 
 .debug_pubtypes
                   0x000048        0x1e4
  .debug_pubtypes
-                  0x000048         0xb2 build/default/production/PIC24_Tetris_main_v001.o
+                  0x000048         0xb2 build/default/debug/PIC24_Tetris_main_v001.o
  .debug_pubtypes
-                  0x0000fa         0xf6 build/default/production/PIC24_setup.o
+                  0x0000fa         0xf6 build/default/debug/PIC24_setup.o
  .debug_pubtypes
-                  0x0001f0         0x3c build/default/production/LCD_setup.o
+                  0x0001f0         0x3c build/default/debug/LCD_setup.o
 
 __c30_signature
                   0x00022c         0x1e
  __c30_signature
-                  0x00022c          0x6 build/default/production/PIC24_Tetris_main_v001.o
+                  0x00022c          0x6 build/default/debug/PIC24_Tetris_main_v001.o
  __c30_signature
-                  0x000232          0x6 build/default/production/PIC24_setup.o
+                  0x000232          0x6 build/default/debug/PIC24_setup.o
  __c30_signature
-                  0x000238          0x6 build/default/production/LCD_setup.o
+                  0x000238          0x6 build/default/debug/LCD_setup.o
  __c30_signature
                   0x00023e          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
@@ -875,36 +916,36 @@ __c30_signature
 
 .config_JTAGEN    0x00abfe          0x2
  .config_JTAGEN
-                  0x00abfe          0x2 build/default/production/PIC24_Tetris_main_v001.o
+                  0x00abfe          0x2 build/default/debug/PIC24_Tetris_main_v001.o
 
 .config_IESO      0x00abfc          0x2
- .config_IESO     0x00abfc          0x2 build/default/production/PIC24_Tetris_main_v001.o
+ .config_IESO     0x00abfc          0x2 build/default/debug/PIC24_Tetris_main_v001.o
 
 .ivt._T1Interrupt
                   0x00001a          0x2
  .ivt._T1Interrupt
-                  0x00001a          0x2 build/default/production/PIC24_Tetris_main_v001.o
+                  0x00001a          0x2 build/default/debug/PIC24_Tetris_main_v001.o
 
 .ivt._IC1Interrupt
                   0x000016          0x2
  .ivt._IC1Interrupt
-                  0x000016          0x2 build/default/production/PIC24_setup.o
+                  0x000016          0x2 build/default/debug/PIC24_setup.o
 
 .ivt._T3Interrupt
                   0x000024          0x2
  .ivt._T3Interrupt
-                  0x000024          0x2 build/default/production/PIC24_setup.o
+                  0x000024          0x2 build/default/debug/PIC24_setup.o
 
-.text             0x00033c        0x13c
- .text            0x00033c         0xac build/default/production/PIC24_Tetris_main_v001.o
+.text             0x00033c        0x138
+ .text            0x00033c         0xa8 build/default/debug/PIC24_Tetris_main_v001.o
                   0x00033c                  _lcdCmd
                   0x00035e                  _lcdData
-                  0x000380                  _main
- .text            0x0003e8         0x74 build/default/production/PIC24_setup.o
-                  0x0003e8                  _initPIC
-                  0x000408                  _initIC1
-                  0x00044e                  _initTimer3
- .text            0x00045c         0x1c build/default/production/LCD_setup.o
-                  0x00045c                  _LCD_cmd
-                  0x00046a                  _LCD_data
-                  0x000472                  _initLCD
+                  0x00037c                  _main
+ .text            0x0003e4         0x74 build/default/debug/PIC24_setup.o
+                  0x0003e4                  _initPIC
+                  0x000404                  _initIC1
+                  0x00044a                  _initTimer3
+ .text            0x000458         0x1c build/default/debug/LCD_setup.o
+                  0x000458                  _LCD_cmd
+                  0x000466                  _LCD_data
+                  0x00046e                  _initLCD

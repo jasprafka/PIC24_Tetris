@@ -22,37 +22,92 @@
 
 #include "xc.h"
 #include "PIC24_setup.h"
+#include "spraf_Lab5_LCD.h"
 
+void __attribute__((interrupt, auto_psv)) _T1Interrupt(void) {
+    _TON = 0;
+    _T1IF = 0;
+    TMR1 = 0;
+}
+
+void lcdCmd(int cmd) {
+    LATB = 0XFFFF;
+    LATB &= cmd;
+    _LATB10 = 0; //LATB10 = A0
+    _LATB11 = 0; //LATB11 = RW
+    _LATB8 = 0; //LATB8 = CS
+    _LATB12 = 1; //LATB12 = E
+    _LATB12 = 0; //LATB12 = E
+    _LATB8 = 1; //LATB8 = CS
+    _LATB11 = 1; //LATB11 = RW
+    
+}
+
+void lcdData(int data) {
+    LATB = 0XFFFF;
+    LATB &= data;
+    _LATB10 = 1; //LATB10 = A0
+    _LATB11 = 0; //LATB11 = RW
+    _LATB8 = 0; //LATB8 = CS
+    _LATB12 = 1; //LATB12 = E
+    _LATB12 = 0; //LATB12 = E
+    _LATB8 = 1; //LATB8 = CS
+    _LATB11 = 1; //LATB11 = RW
+}
 
 int main(void) {
-    
-    _IC1IE = 0;
-    
+
+    _T1IE = 1;
+
     //Setup
     initPIC();
-    initTimer3();
-    initIC1();
-    
-    _IC1IE = 1;
 
-//    _TRISB15 = 1;
+    PR1 = 25000;
+    _T1IF = 0;
+    _T1IP = 4;
+    T1CON = 0x20;
+
+
+
+
+    _LATB9 = 0;
+    _TON = 1;
+    while (!_T1IF);
+
+    _LATB9 = 1; //LATB9 = RES
+    _TON = 1;
+    while (!_T1IF);
+
+    _LATB8 = 1; //LATB8 = CS
+    _LATB12 = 1; //LATB12 = E
+    _LATB11 = 1; //LATB11 = RW
+    _LATB10 = 1; //LATB10 = A0
+
+    lcdCmd(0xffa2);
+    lcdCmd(0xffa0);
+    lcdCmd(0xffc8);
+    lcdCmd(0xffa4);
+    lcdCmd(0xff40);
+    lcdCmd(0xff25);
+    lcdCmd(0xff81);
+    lcdCmd(0xff10);
+    lcdCmd(0xff2f);
+    lcdCmd(0xffaf);
+//  command(0xA2);         //LCD drive voltage bias ratio.  
+//  command(0xA0);         //Ram->SEG output = normal
+//  command(0xC8);         //COM direction scan = normal (0xC8 in Example Initialization Program) 
+//  command(0xA4);         //Display All Points normally..
+//  command(0x40);         //Display Start Line
+//  command(0x25);         //Resistor Ratio Set 
+//  command(0x81);         //Electronic Volume Command (set contrast) Double Byte: 1 of 2
+//  command(0x10);         //Electronic Volume value (contrast value) Double Byte: 2 of 2 
+//  command(0x2F);         //Power Control Set
+//  command(0xAF);         //Display ON
+
 
     //Main game loop
     while (1) {
 
-//        if(buttPress){
-//           LATB = 0b111100000;
-//        } else {
-//            LATB = 0;
-//        }
-//        
-//        if (PORTA != 0xf) {
-//            LATB = 0b111100000;
-//        } else {
-//            LATB = 0;
-//        }
-
-        LATB = 0;
     }
 
     return 0;

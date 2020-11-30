@@ -54,7 +54,7 @@ void __attribute__((interrupt, auto_psv)) _T3Interrupt(void) {
 void initPIC() {
     _RCDIV = 0; //Set Fcy = 16Mhz
     AD1PCFG = 0x9FFF; //Set all pins to digital I/O
-    TRISB = 0x8000; //Set PORTB to outputs, set PORTB15 to input
+    TRISB = 0x0; //Set PORTB to outputs, set PORTB15 to input
     TRISA = 0xFF; //Set LATA to inputs
     _CN2PUE = 1; //Enable Pull-up on RA0
     _CN3PUE = 1; //Enable Pull-up on RA1
