@@ -39,11 +39,9 @@
 // TODO Insert C++ class definitions if appropriate
 
 // TODO Insert declarations
-void __attribute__((interrupt, auto_psv)) _IC1Interrupt(void);
-void __attribute__((interrupt, auto_psv)) _T3Interrupt(void);
+void __attribute__((interrupt, auto_psv)) _T1Interrupt(void);
 void initPIC(void);
-void initIC1(void);
-void initTimer3(void);
+
 
 // Comment a function and leverage automatic documentation with slash star star
 /**

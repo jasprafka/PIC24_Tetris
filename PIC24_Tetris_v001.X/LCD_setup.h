@@ -38,9 +38,10 @@
 // TODO Insert C++ class definitions if appropriate
 
 // TODO Insert declarations
-void LCD_cmd(char com);
-void LCD_data(char data);
+void lcdCmd(int cmd);
+void lcdData(int data);
 void initLCD(void);
+void clearLCD(void);
 
 
 // Comment a function and leverage automatic documentation with slash star star
