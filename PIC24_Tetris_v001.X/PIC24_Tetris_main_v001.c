@@ -92,7 +92,7 @@ unsigned char NHD_Logo[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-void clearLCD1(void) {
+void clearLCD1(int pict) {
     unsigned int i, j;
     unsigned int page = 0xffB0;
     lcdCmd(0xff40); //Display start address + 0x40
@@ -101,7 +101,7 @@ void clearLCD1(void) {
         lcdCmd(0xff10); //column address upper 4 bits + 0x10
         lcdCmd(0xff00); //column address lower 4 bits + 0x00
         for (j = 0; j < 128; j++) { //128 columns wide
-            lcdData(0xffff); //send picture data
+            lcdData(pict); //send picture data
 
         }
         page++; //after 128 columns, go to next page
@@ -115,7 +115,7 @@ int main(void) {
     initLCD();
     clearLCD();
 
-    PR1 = 25000;
+    PR1 = 35000;
     _T1IF = 0;
     _T1IP = 4;
     _T1IE = 1;
@@ -126,10 +126,16 @@ int main(void) {
     while (1) {
         _TON = 1;
         while(!_T1IF);
-        clearLCD1();
+        clearLCD1(0xffff);
         _TON = 1;
         while(!_T1IF);
         clearLCD();
+        _TON = 1;
+        while(!_T1IF);
+        clearLCD1(0xff0f);
+        _TON = 1;
+        while(!_T1IF);
+        clearLCD1(0xfff0);
     }
 
     return 0;
