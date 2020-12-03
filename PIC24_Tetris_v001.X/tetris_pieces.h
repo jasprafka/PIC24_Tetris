@@ -28,8 +28,8 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef TETRIS_PIECES_H
+#define	TETRIS_PIECES_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
@@ -38,11 +38,15 @@
 // TODO Insert C++ class definitions if appropriate
 
 // TODO Insert declarations
-void lcdCmd(int cmd);
-void lcdData(int data);
-void initLCD(void);
-void clearLCD(void);
-void drawNHDLogo();
+
+typedef struct {
+    unsigned int xPos; //current page
+    unsigned int yPos; //upper bit of column address
+    unsigned int *tetromino; //pixel data for tetromino piece
+} curTetromino;
+
+void drawTetromino(curTetromino tet, unsigned int screen[1024]);
+void drawScreenBuf(unsigned int screen[1024]);
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -79,5 +83,5 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif	/* TETRIS_PIECES_H */
 
