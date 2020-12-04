@@ -68,10 +68,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xe6           0x159  (345)
-.const                       0x2e6               0x900           0xd80  (3456)
-.text                        0xbe6               0x2cc           0x432  (1074)
+.const                       0x2e6               0x880           0xcc0  (3264)
+.text                        0xb66               0x2ae           0x405  (1029)
 
-                 Total "program" memory used (bytes):         0x130b  (4875) 7%
+                 Total "program" memory used (bytes):         0x121e  (4638) 7%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -102,16 +102,16 @@ External Symbols in Program Memory (by address):
                   0x000252                  __data_init
                   0x0002c8                  __T1Interrupt
                   0x0002e0                  __DefaultInterrupt
-                  0x000be6                  _lcdCmd
-                  0x000c08                  _lcdData
-                  0x000c2a                  _initLCD
-                  0x000c7c                  _clearLCD
-                  0x000cc2                  _drawNHDLogo
-                  0x000d24                  _initScreenBuf
-                  0x000d48                  _drawScreenBuf
-                  0x000da6                  _drawTetromino
-                  0x000e20                  _main
-                  0x000e7c                  _initPIC
+                  0x000b66                  _lcdCmd
+                  0x000b88                  _lcdData
+                  0x000baa                  _initLCD
+                  0x000bfc                  _clearLCD
+                  0x000c42                  _drawNHDLogo
+                  0x000ca4                  _initScreenBuf
+                  0x000cc6                  _drawScreenBuf
+                  0x000d24                  _drawTetromino
+                  0x000d82                  _main
+                  0x000dde                  _initPIC
 
 External Symbols in Program Memory (by name):
 
@@ -121,16 +121,16 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000c7c                  _clearLCD
-                  0x000cc2                  _drawNHDLogo
-                  0x000d48                  _drawScreenBuf
-                  0x000da6                  _drawTetromino
-                  0x000c2a                  _initLCD
-                  0x000e7c                  _initPIC
-                  0x000d24                  _initScreenBuf
-                  0x000be6                  _lcdCmd
-                  0x000c08                  _lcdData
-                  0x000e20                  _main
+                  0x000bfc                  _clearLCD
+                  0x000c42                  _drawNHDLogo
+                  0x000cc6                  _drawScreenBuf
+                  0x000d24                  _drawTetromino
+                  0x000baa                  _initLCD
+                  0x000dde                  _initPIC
+                  0x000ca4                  _initScreenBuf
+                  0x000b66                  _lcdCmd
+                  0x000b88                  _lcdData
+                  0x000d82                  _main
 
 Memory Configuration
 
@@ -222,12 +222,12 @@ __CONFIG1
  .debug_abbrev    0x000247        0x15f build/default/production/LCD_setup.o
  .debug_abbrev    0x0003a6         0x82 build/default/production/_ext/2014350538/tetris_pieces.o
 
-.debug_line       0x000000        0x4bb
+.debug_line       0x000000        0x4b5
  *(.debug_line)
  .debug_line      0x000000        0x13f build/default/production/PIC24_Tetris_main_v001.o
  .debug_line      0x00013f        0x130 build/default/production/PIC24_setup.o
  .debug_line      0x00026f        0x178 build/default/production/LCD_setup.o
- .debug_line      0x0003e7         0xd4 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_line      0x0003e7         0xce build/default/production/_ext/2014350538/tetris_pieces.o
 
 .debug_frame      0x000000        0x170
  *(.debug_frame)
@@ -895,22 +895,22 @@ __c30_signature
  .ivt._T1Interrupt
                   0x00001a          0x2 build/default/production/PIC24_setup.o
 
-.const              0x82e6        0x900 load address 0x0002e6  
+.const              0x82e6        0x880 load address 0x0002e6  
  .const             0x82e6        0x800 build/default/production/LCD_setup.o
- .const             0x8ae6        0x100 build/default/production/PIC24_Tetris_main_v001.o
+ .const             0x8ae6         0x80 build/default/production/PIC24_Tetris_main_v001.o
 
-.text             0x000be6        0x2cc
- .text            0x000be6        0x1c0 build/default/production/LCD_setup.o
-                  0x000be6                  _lcdCmd
-                  0x000c08                  _lcdData
-                  0x000c2a                  _initLCD
-                  0x000c7c                  _clearLCD
-                  0x000cc2                  _drawNHDLogo
-                  0x000d24                  _initScreenBuf
-                  0x000d48                  _drawScreenBuf
- .text            0x000da6         0x7a build/default/production/_ext/2014350538/tetris_pieces.o
-                  0x000da6                  _drawTetromino
- .text            0x000e20         0x5c build/default/production/PIC24_Tetris_main_v001.o
-                  0x000e20                  _main
- .text            0x000e7c         0x36 build/default/production/PIC24_setup.o
-                  0x000e7c                  _initPIC
+.text             0x000b66        0x2ae
+ .text            0x000b66        0x1be build/default/production/LCD_setup.o
+                  0x000b66                  _lcdCmd
+                  0x000b88                  _lcdData
+                  0x000baa                  _initLCD
+                  0x000bfc                  _clearLCD
+                  0x000c42                  _drawNHDLogo
+                  0x000ca4                  _initScreenBuf
+                  0x000cc6                  _drawScreenBuf
+ .text            0x000d24         0x5e build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x000d24                  _drawTetromino
+ .text            0x000d82         0x5c build/default/production/PIC24_Tetris_main_v001.o
+                  0x000d82                  _main
+ .text            0x000dde         0x36 build/default/production/PIC24_setup.o
+                  0x000dde                  _initPIC

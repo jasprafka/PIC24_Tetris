@@ -42,10 +42,10 @@
 typedef struct {
     unsigned int xPos; //current page
     unsigned int yPos; //upper bit of column address
-    unsigned int *tetromino; //pixel data for tetromino piece
+    unsigned char *tetromino; //pixel data for tetromino piece
 } curTetromino;
 
-void drawTetromino(curTetromino tet, unsigned int screen[1024]);
+void drawTetromino(curTetromino tet, unsigned char screen[1024]);
 
 
 // Comment a function and leverage automatic documentation with slash star star

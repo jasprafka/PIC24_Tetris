@@ -43,8 +43,8 @@ void lcdData(int data);
 void initLCD(void);
 void clearLCD(void);
 void drawNHDLogo();
-void initScreenBuf(unsigned int screen[1024]);
-void drawScreenBuf(unsigned int screen[1024]);
+void initScreenBuf(unsigned char screen[1024]);
+void drawScreenBuf(unsigned char screen[1024]);
 
 // Comment a function and leverage automatic documentation with slash star star
 /**

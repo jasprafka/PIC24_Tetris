@@ -160,15 +160,15 @@ void drawNHDLogo() {
     }
 }
 
-void initScreenBuf(unsigned int screen[1024]){
+void initScreenBuf(unsigned char screen[1024]){
     int i;
     for (i = 0; i < 1024; i++) {
-        screen[i] = 0;
+        screen[i] = 0x00;
     }
 
 }
 
-void drawScreenBuf(unsigned int screen[1024]) {
+void drawScreenBuf(unsigned char screen[1024]) {
     unsigned int i, j, count = 0;
     unsigned int page = 0xffB0;
     lcdCmd(0xff40); //Display start address + 0x40
