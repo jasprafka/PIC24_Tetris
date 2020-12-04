@@ -46,7 +46,7 @@ typedef struct {
 } curTetromino;
 
 void drawTetromino(curTetromino tet, unsigned int screen[1024]);
-void drawScreenBuf(unsigned int screen[1024]);
+
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
