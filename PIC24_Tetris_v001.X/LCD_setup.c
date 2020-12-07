@@ -168,6 +168,14 @@ void initScreenBuf(unsigned char screen[1024]){
 
 }
 
+void drawField(unsigned char pField[1024], unsigned char screen[1024]){
+    int i;
+    for (i = 0; i < 1024; i++) {
+        screen[i] = pField[i];
+    }
+
+}
+
 void drawScreenBuf(unsigned char screen[1024]) {
     unsigned int i, j, count = 0;
     unsigned int page = 0xffB0;

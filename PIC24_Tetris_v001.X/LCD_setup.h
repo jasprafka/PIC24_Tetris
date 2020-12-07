@@ -44,6 +44,7 @@ void initLCD(void);
 void clearLCD(void);
 void drawNHDLogo();
 void initScreenBuf(unsigned char screen[1024]);
+void drawField(unsigned char pField[1024], unsigned char screen[1024]);
 void drawScreenBuf(unsigned char screen[1024]);
 
 // Comment a function and leverage automatic documentation with slash star star

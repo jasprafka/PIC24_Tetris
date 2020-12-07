@@ -42,6 +42,7 @@
 typedef struct {
     unsigned int xPos; //current page
     unsigned int yPos; //upper bit of column address
+    int rotation;
     unsigned char *tetromino; //pixel data for tetromino piece
 } curTetromino;
 
