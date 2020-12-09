@@ -25,6 +25,13 @@
 #include "spraf_Lab5_LCD.h"
 #include "LCD_setup.h"
 #include "tetris_pieces.h"
+#include <stdlib.h>
+
+/*
+ ***********************************************
+ * Pixel Data                                  *
+ ***********************************************
+ */
 
 unsigned char longPiece[4][128] = {
     {
@@ -35,7 +42,7 @@ unsigned char longPiece[4][128] = {
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //P3, Col 0-15
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //P3, Col 16-32
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //P4, Col 0-15
-        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //P4, Col 16-32
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 //P4, Col 16-32
     },
     {
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, //P1, Col 0-15
@@ -381,40 +388,9 @@ unsigned char zPiece[4][128] = {
     }
 };
 
-int main(void) {
-
-    //Setup
-    initPIC();
-    initLCD();
-    clearLCD();
-
-
-    //Variables
-    unsigned char screen[1024];
-    unsigned char pField[1024];
-    initScreenBuf(screen);
-    initScreenBuf(pField);
-
-
-    curTetromino playPiece;
-
-    playPiece.xPos = 88;
-    playPiece.yPos = 4;
-    playPiece.rotation = 0;
-
-    //Timer one setup
-    //Deprecated, may or may not still be necessary
-    PR1 = 35000;
-    _T1IF = 0;
-    _T1IP = 4;
-    _T1IE = 1;
-    T1CON = 0x30;
-
-    int x = 0;
-
-    //Main game loop
+void titleAnimation(curTetromino playPiece, unsigned char screen[1024], unsigned char pField[1024]) {
+    int x;
     while (1) {
-
         switch (x) {
             case 0:
                 playPiece.tetromino = longPiece[playPiece.rotation];
@@ -439,32 +415,212 @@ int main(void) {
                 break;
         }
 
-        if(playPiece.rotation == 3){
+        if (playPiece.rotation == 3) {
             playPiece.rotation = 0;
-            x += x == 6 ? -6:1;
-            
-        }else {
+            x += x == 6 ? -6 : 1;
+
+        } else {
             playPiece.rotation++;
         }
-
 
         drawField(pField, screen);
         drawTetromino(playPiece, screen);
         drawScreenBuf(screen);
+    }
+}
 
-        int i;
-        for (i = 0; i < 1000; i++) {
-            int j;
-            for (j = 0; j < 1000; j++) {
+unsigned char* genNewTet() {
+    int newTet = rand() % 7;
+    switch (newTet) {
+        case 0:
+            return longPiece[0];
+            break;
+        case 1:
+            return L1Piece[0];
+            break;
+        case 2:
+            return L2Piece[0];
+            break;
+        case 3:
+            return squarePiece[0];
+            break;
+        case 4:
+            return tPiece[0];
+            break;
+        case 5:
+            return sPiece[0];
+            break;
+        case 6:
+            return zPiece[0];
+            break;
+    }
+    return zPiece[0];
+}
+
+int main(void) {
+
+    /*
+     ***********************************************
+     * Setup                                       *
+     ***********************************************
+     */
+    initPIC();
+    initLCD();
+    clearLCD();
+
+
+    /*
+     ***********************************************
+     * Variables                                   *
+     ***********************************************
+     */
+    //Screen buffer and playField
+    unsigned char screen[1024];
+    unsigned char pField[1024];
+    initScreenBuf(screen);
+    initPlayField(pField);
+
+    //Current tetris piece
+    curTetromino playPiece;
+    playPiece.xPos = 0;
+    playPiece.yPos = 2;
+    playPiece.rotation = 0;
+    playPiece.tetromino = genNewTet();
+
+    //Game Logic Variables
+    int ticker = 0;
+    int timeForceDown = 20;
+    int pi, px, py, fi, fx, fy, blocks, compLines;
+
+    //Timer one setup
+    //Deprecated, may or may not still be necessary
+    PR1 = 10000;
+    _T1IF = 0;
+    _T1IP = 4;
+    _T1IE = 1;
+    T1CON = 0x30;
+
+    /*
+     ***********************************************
+     * Main Game Loop                              *
+     ***********************************************
+     */
+    while (1) {
+
+        _TON = 1;
+        while (!_T1IF);
+        _T1IF = 0;
+
+        /*
+         ***********************************************
+         * Handle User Input                           *
+         ***********************************************
+         */
+        //Move tetromino left
+        if (!_RA0 && collide(playPiece, pField, 0)) {
+            playPiece.yPos += 1;
+        }
+        //Move tetromino right
+        if (!_RA1 && collide(playPiece, pField, 1)) {
+            playPiece.yPos -= 1;
+        }
+        //Move tetromino down
+        if (!_RA2 && collide(playPiece, pField, 2)) {
+            playPiece.xPos += 8;
+        }
+        //Spin tetromino 
+        if (!_RA3 && collide(playPiece, pField, 3)) {
+            if (playPiece.rotation == 3) {
+                playPiece.tetromino -= 384;
+            } else {
+                playPiece.tetromino += 128;
+            }
+            playPiece.rotation += playPiece.rotation == 3 ? -3 : 1;
+
+        }
+
+        /*
+         ***********************************************
+         * Main Game Logic                             *
+         ***********************************************
+         */
+        //Check if its time to force the current piece down
+        if (ticker % timeForceDown == 0) {
+
+            //Check if the piece can be forced down 
+            if (collide(playPiece, pField, 2)) {
+
+                //If yes, move it down.
+                playPiece.xPos += 8;
+
+            } else {
+
+                //If not, lock it into place!
+                for (py = 0; py < 4; py++) {
+                    for (px = 0; px < 32; px++) {
+
+                        //Get piece index into the tetromino
+                        pi = (py * 32 + px);
+
+                        //Get field index into the play field at the tetromino's location
+                        fi = ((playPiece.yPos + py) * 128 + (playPiece.xPos + px));
+
+                        //Check if that block is filled in
+                        if (playPiece.tetromino[pi] == 0xff) {
+
+                            //If yes, lock piece into pField
+                            pField[fi] = playPiece.tetromino[pi];
+
+                        }
+                    }
+                }
+
+
+                //Check for complete lines
+                for (fx = 0; fx < 120; fx ++) {
+                    blocks = 0;
+                    if (pField[fx] == 0xff) {
+                        for (fy = 1; fy < 7; fy++) {
+                            if (pField[(fy * 128) + fx] == 0xff) {
+                                blocks++;
+                            }
+                        }
+                    }
+                    if (blocks == 6) {
+                        compLines++;
+                        for (fy = 1; fy < 7; fy++) {
+                            pField[fy * 128 + fx] = 0x00;
+                        }
+                    }
+                }
+
+
+                //Once play piece has been locked in, move playPiece back to the 
+                //top middle of screen and generate a new tetromino
+                playPiece.xPos = 0;
+                playPiece.yPos = 3;
+                playPiece.rotation = 0;
+                playPiece.tetromino = genNewTet();
 
 
             }
-
 
         }
 
 
 
+        //Increment game ticker
+        ticker++;
+
+
+        /*
+         ***********************************************
+         * Render Output                               *
+         ***********************************************
+         */
+        drawField(pField, screen);
+        drawTetromino(playPiece, screen);
+        drawScreenBuf(screen);
     }
 
     return 0;

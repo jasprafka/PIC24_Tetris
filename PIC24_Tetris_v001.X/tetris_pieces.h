@@ -40,13 +40,14 @@
 // TODO Insert declarations
 
 typedef struct {
-    unsigned int xPos; //current page
-    unsigned int yPos; //upper bit of column address
+    int xPos; //upper bit of column address 
+    int yPos; //current page
     int rotation;
     unsigned char *tetromino; //pixel data for tetromino piece
 } curTetromino;
 
 void drawTetromino(curTetromino tet, unsigned char screen[1024]);
+int collide(curTetromino tet, unsigned char pField[1024], char dir);
 
 
 // Comment a function and leverage automatic documentation with slash star star

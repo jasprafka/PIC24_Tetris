@@ -28,8 +28,8 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef LCD_SETUP_H
+#define	LCD_SETUP_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
@@ -44,6 +44,7 @@ void initLCD(void);
 void clearLCD(void);
 void drawNHDLogo();
 void initScreenBuf(unsigned char screen[1024]);
+void initPlayField(unsigned char pField[1024]);
 void drawField(unsigned char pField[1024], unsigned char screen[1024]);
 void drawScreenBuf(unsigned char screen[1024]);
 
@@ -82,5 +83,5 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif	/* LCD_SETUP_H */
 
