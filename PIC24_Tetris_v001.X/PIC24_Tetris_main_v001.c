@@ -490,7 +490,7 @@ int main(void) {
     //Game Logic Variables
     int ticker = 0;
     int timeForceDown = 20;
-    int pi, px, py, fi, fx, fy, blocks, compLines;
+    int pi, px, py, fi, fx, fy, blocks, compLines = 0;
 
     //Timer one setup
     //Deprecated, may or may not still be necessary
