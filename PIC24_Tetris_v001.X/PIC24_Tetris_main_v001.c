@@ -489,7 +489,8 @@ int main(void) {
     //Game Logic Variables
     int ticker = 0;
     int timeForceDown = 20;
-    int pi, px, py, fi, fx, fy, blocks, compLines = 0;
+    int pi, px, py, fi, fx, fy;
+    int blocks, pieceCount = 0;
     int gameOver = 0;
 
     //Timer one setup
@@ -570,9 +571,8 @@ int main(void) {
                             //Check if that block is filled in
                             if (playPiece.image[pi] == 0xff) {
 
-                                //If yes, lock piece into pField
+                                //If yes, lock pixel into pField
                                 pField[fi] = playPiece.image[pi];
-
                             }
                         }
                     }
@@ -588,14 +588,21 @@ int main(void) {
                                 }
                             }
                         }
+                        //If 6 blocks are filled in, line is complete
                         if (blocks == 6) {
-                            compLines++;
+
+                            //Delete complete lines
                             for (fy = 1; fy < 7; fy++) {
                                 pField[fy * 128 + fx] = 0x00;
                             }
                         }
                     }
 
+                    //Every 5 pieces, increase the speed
+                    pieceCount++;
+                    if (pieceCount % 5 == 0 && timeForceDown > 1) {
+                        timeForceDown--;
+                    }
 
                     //Once play piece has been locked in, move playPiece back to the 
                     //top middle of screen and generate a new tetromino
@@ -609,7 +616,6 @@ int main(void) {
                     if (!collide(playPiece, pField, 2)) {
                         gameOver = 1;
                     }
-
 
                 }
 
@@ -632,8 +638,13 @@ int main(void) {
         }
 
 
-        //ToDo: when gameover, display try again? If the first button is 
-        //pressed, restart the game.
+        /*
+         ***********************************************
+         * Game Over!                                  *
+         ***********************************************
+         */
+
+        //ToDo: when gameover, display "try again?"
         if (!_RA0) {
             //Reset tetris piece
             playPiece.xPos = 0;
@@ -644,12 +655,12 @@ int main(void) {
             //Reset screen buffer and playField
             initScreenBuf(screen);
             initPlayField(pField);
-            
+
             //Redraw game field, tetris piece, and screen with new data
             drawField(pField, screen);
             drawSprite(playPiece, screen);
             drawScreenBuf(screen);
-            
+
             //Restart game
             gameOver = false;
         }
