@@ -74,9 +74,9 @@ section                    address   length (PC units)   length (bytes) (dec)
 .text                        0x200               0x180           0x240  (576)
 .const                       0x380               0x800           0xc00  (3072)
 .dinit                       0xb80               0x96e           0xe25  (3621)
-.text                       0x14ee               0x7ca           0xbaf  (2991)
+.text                       0x14ee               0x7d4           0xbbe  (3006)
 
-                 Total "program" memory used (bytes):         0x2814  (10260) 15%
+                 Total "program" memory used (bytes):         0x2823  (10275) 15%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -145,18 +145,18 @@ External Symbols in Program Memory (by address):
                   0x0014ee                  _titleAnimation
                   0x0015ae                  _genNewTet
                   0x001606                  _main
-                  0x0018aa                  _lcdCmd
-                  0x0018cc                  _lcdData
-                  0x0018ee                  _initLCD
-                  0x001940                  _clearLCD
-                  0x001986                  _drawNHDLogo
-                  0x0019e8                  _initScreenBuf
-                  0x001a0a                  _initPlayField
-                  0x001a76                  _drawField
-                  0x001aa0                  _drawScreenBuf
-                  0x001afe                  _drawTetromino
-                  0x001b60                  _collide
-                  0x001c82                  _initPIC
+                  0x0018b4                  _lcdCmd
+                  0x0018d6                  _lcdData
+                  0x0018f8                  _initLCD
+                  0x00194a                  _clearLCD
+                  0x001990                  _drawNHDLogo
+                  0x0019f2                  _initScreenBuf
+                  0x001a14                  _initPlayField
+                  0x001a80                  _drawField
+                  0x001aaa                  _drawScreenBuf
+                  0x001b08                  _drawTetromino
+                  0x001b6a                  _collide
+                  0x001c8c                  _initPIC
 
 External Symbols in Program Memory (by name):
 
@@ -169,19 +169,19 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x001940                  _clearLCD
-                  0x001b60                  _collide
-                  0x001a76                  _drawField
-                  0x001986                  _drawNHDLogo
-                  0x001aa0                  _drawScreenBuf
-                  0x001afe                  _drawTetromino
+                  0x00194a                  _clearLCD
+                  0x001b6a                  _collide
+                  0x001a80                  _drawField
+                  0x001990                  _drawNHDLogo
+                  0x001aaa                  _drawScreenBuf
+                  0x001b08                  _drawTetromino
                   0x0015ae                  _genNewTet
-                  0x0018ee                  _initLCD
-                  0x001c82                  _initPIC
-                  0x001a0a                  _initPlayField
-                  0x0019e8                  _initScreenBuf
-                  0x0018aa                  _lcdCmd
-                  0x0018cc                  _lcdData
+                  0x0018f8                  _initLCD
+                  0x001c8c                  _initPIC
+                  0x001a14                  _initPlayField
+                  0x0019f2                  _initScreenBuf
+                  0x0018b4                  _lcdCmd
+                  0x0018d6                  _lcdData
                   0x001606                  _main
                   0x0002e6                  _rand
                   0x0014ee                  _titleAnimation
@@ -267,27 +267,27 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x20e1
+.debug_info       0x000000       0x20dc
  *(.debug_info)
- .debug_info      0x000000        0xb03 build/default/production/PIC24_Tetris_main_v001.o
- .debug_info      0x000b03        0xb50 build/default/production/PIC24_setup.o
- .debug_info      0x001653        0x7de build/default/production/LCD_setup.o
- .debug_info      0x001e31        0x2b0 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_info      0x000000        0xafe build/default/production/PIC24_Tetris_main_v001.o
+ .debug_info      0x000afe        0xb50 build/default/production/PIC24_setup.o
+ .debug_info      0x00164e        0x7de build/default/production/LCD_setup.o
+ .debug_info      0x001e2c        0x2b0 build/default/production/_ext/2014350538/tetris_pieces.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x4fe
+.debug_abbrev     0x000000        0x4f1
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x1f9 build/default/production/PIC24_Tetris_main_v001.o
- .debug_abbrev    0x0001f9         0xfa build/default/production/PIC24_setup.o
- .debug_abbrev    0x0002f3        0x16e build/default/production/LCD_setup.o
- .debug_abbrev    0x000461         0x9d build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_abbrev    0x000000        0x1ec build/default/production/PIC24_Tetris_main_v001.o
+ .debug_abbrev    0x0001ec         0xfa build/default/production/PIC24_setup.o
+ .debug_abbrev    0x0002e6        0x16e build/default/production/LCD_setup.o
+ .debug_abbrev    0x000454         0x9d build/default/production/_ext/2014350538/tetris_pieces.o
 
-.debug_line       0x000000        0x562
+.debug_line       0x000000        0x564
  *(.debug_line)
- .debug_line      0x000000        0x1ae build/default/production/PIC24_Tetris_main_v001.o
- .debug_line      0x0001ae        0x130 build/default/production/PIC24_setup.o
- .debug_line      0x0002de        0x18c build/default/production/LCD_setup.o
- .debug_line      0x00046a         0xf8 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_line      0x000000        0x1b0 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_line      0x0001b0        0x130 build/default/production/PIC24_setup.o
+ .debug_line      0x0002e0        0x18c build/default/production/LCD_setup.o
+ .debug_line      0x00046c         0xf8 build/default/production/_ext/2014350538/tetris_pieces.o
 
 .debug_frame      0x000000        0x1f2
  *(.debug_frame)
@@ -986,23 +986,23 @@ __c30_signature
 .dinit            0x000b80        0x96e
  .dinit           0x000b80        0x96e data_init
 
-.text             0x0014ee        0x7ca
- .text            0x0014ee        0x3bc build/default/production/PIC24_Tetris_main_v001.o
+.text             0x0014ee        0x7d4
+ .text            0x0014ee        0x3c6 build/default/production/PIC24_Tetris_main_v001.o
                   0x0014ee                  _titleAnimation
                   0x0015ae                  _genNewTet
                   0x001606                  _main
- .text            0x0018aa        0x254 build/default/production/LCD_setup.o
-                  0x0018aa                  _lcdCmd
-                  0x0018cc                  _lcdData
-                  0x0018ee                  _initLCD
-                  0x001940                  _clearLCD
-                  0x001986                  _drawNHDLogo
-                  0x0019e8                  _initScreenBuf
-                  0x001a0a                  _initPlayField
-                  0x001a76                  _drawField
-                  0x001aa0                  _drawScreenBuf
- .text            0x001afe        0x184 build/default/production/_ext/2014350538/tetris_pieces.o
-                  0x001afe                  _drawTetromino
-                  0x001b60                  _collide
- .text            0x001c82         0x36 build/default/production/PIC24_setup.o
-                  0x001c82                  _initPIC
+ .text            0x0018b4        0x254 build/default/production/LCD_setup.o
+                  0x0018b4                  _lcdCmd
+                  0x0018d6                  _lcdData
+                  0x0018f8                  _initLCD
+                  0x00194a                  _clearLCD
+                  0x001990                  _drawNHDLogo
+                  0x0019f2                  _initScreenBuf
+                  0x001a14                  _initPlayField
+                  0x001a80                  _drawField
+                  0x001aaa                  _drawScreenBuf
+ .text            0x001b08        0x184 build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x001b08                  _drawTetromino
+                  0x001b6a                  _collide
+ .text            0x001c8c         0x36 build/default/production/PIC24_setup.o
+                  0x001c8c                  _initPIC

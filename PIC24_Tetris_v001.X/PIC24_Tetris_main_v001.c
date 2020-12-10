@@ -22,7 +22,6 @@
 
 #include "xc.h"
 #include "PIC24_setup.h"
-#include "spraf_Lab5_LCD.h"
 #include "LCD_setup.h"
 #include "tetris_pieces.h"
 #include <stdlib.h>
