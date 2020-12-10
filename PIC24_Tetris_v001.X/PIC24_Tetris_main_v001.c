@@ -490,6 +490,7 @@ int main(void) {
     int ticker = 0;
     int timeForceDown = 20;
     int pi, px, py, fi, fx, fy, blocks, compLines = 0;
+    int gameOver = 0;
 
     //Timer one setup
     //Deprecated, may or may not still be necessary
@@ -506,121 +507,133 @@ int main(void) {
      */
     while (1) {
 
-        _TON = 1;
-        while (!_T1IF);
-        _T1IF = 0;
+        while (!gameOver) {
 
-        /*
-         ***********************************************
-         * Handle User Input                           *
-         ***********************************************
-         */
-        //Move tetromino left
-        if (!_RA0 && collide(playPiece, pField, 0)) {
-            playPiece.yPos += 1;
-        }
-        //Move tetromino right
-        if (!_RA1 && collide(playPiece, pField, 1)) {
-            playPiece.yPos -= 1;
-        }
-        //Move tetromino down
-        if (!_RA2 && collide(playPiece, pField, 2)) {
-            playPiece.xPos += 8;
-        }
-        //Spin tetromino 
-        if (!_RA3 && collide(playPiece, pField, 3)) {
-            if (playPiece.rotation == 3) {
-                playPiece.tetromino -= 384;
-            } else {
-                playPiece.tetromino += 128;
+            _TON = 1;
+            while (!_T1IF);
+            _T1IF = 0;
+
+            /*
+             ***********************************************
+             * Handle User Input                           *
+             ***********************************************
+             */
+            //Move tetromino left
+            if (!_RA0 && collide(playPiece, pField, 0)) {
+                playPiece.yPos += 1;
             }
-            playPiece.rotation += playPiece.rotation == 3 ? -3 : 1;
-
-        }
-
-        /*
-         ***********************************************
-         * Main Game Logic                             *
-         ***********************************************
-         */
-        //Check if its time to force the current piece down
-        if (ticker % timeForceDown == 0) {
-
-            //Check if the piece can be forced down 
-            if (collide(playPiece, pField, 2)) {
-
-                //If yes, move it down.
+            //Move tetromino right
+            if (!_RA1 && collide(playPiece, pField, 1)) {
+                playPiece.yPos -= 1;
+            }
+            //Move tetromino down
+            if (!_RA2 && collide(playPiece, pField, 2)) {
                 playPiece.xPos += 8;
-
-            } else {
-
-                //If not, lock it into place!
-                for (py = 0; py < 4; py++) {
-                    for (px = 0; px < 32; px++) {
-
-                        //Get piece index into the tetromino
-                        pi = (py * 32 + px);
-
-                        //Get field index into the play field at the tetromino's location
-                        fi = ((playPiece.yPos + py) * 128 + (playPiece.xPos + px));
-
-                        //Check if that block is filled in
-                        if (playPiece.tetromino[pi] == 0xff) {
-
-                            //If yes, lock piece into pField
-                            pField[fi] = playPiece.tetromino[pi];
-
-                        }
-                    }
+            }
+            //Spin tetromino 
+            if (!_RA3 && collide(playPiece, pField, 3)) {
+                if (playPiece.rotation == 3) {
+                    playPiece.tetromino -= 384;
+                } else {
+                    playPiece.tetromino += 128;
                 }
+                playPiece.rotation += playPiece.rotation == 3 ? -3 : 1;
 
+            }
 
-                //Check for complete lines
-                for (fx = 0; fx < 120; fx ++) {
-                    blocks = 0;
-                    if (pField[fx] == 0xff) {
-                        for (fy = 1; fy < 7; fy++) {
-                            if (pField[(fy * 128) + fx] == 0xff) {
-                                blocks++;
+            /*
+             ***********************************************
+             * Main Game Logic                             *
+             ***********************************************
+             */
+            //Check if its time to force the current piece down
+            if (ticker % timeForceDown == 0) {
+
+                //Check if the piece can be forced down 
+                if (collide(playPiece, pField, 2)) {
+
+                    //If yes, move it down.
+                    playPiece.xPos += 8;
+
+                } else {
+
+                    //If not, lock it into place!
+                    for (py = 0; py < 4; py++) {
+                        for (px = 0; px < 32; px++) {
+
+                            //Get piece index into the tetromino
+                            pi = (py * 32 + px);
+
+                            //Get field index into the play field at the tetromino's location
+                            fi = ((playPiece.yPos + py) * 128 + (playPiece.xPos + px));
+
+                            //Check if that block is filled in
+                            if (playPiece.tetromino[pi] == 0xff) {
+
+                                //If yes, lock piece into pField
+                                pField[fi] = playPiece.tetromino[pi];
+
                             }
                         }
                     }
-                    if (blocks == 6) {
-                        compLines++;
-                        for (fy = 1; fy < 7; fy++) {
-                            pField[fy * 128 + fx] = 0x00;
+
+
+                    //Check for complete lines
+                    for (fx = 0; fx < 120; fx++) {
+                        blocks = 0;
+                        if (pField[fx] == 0xff) {
+                            for (fy = 1; fy < 7; fy++) {
+                                if (pField[(fy * 128) + fx] == 0xff) {
+                                    blocks++;
+                                }
+                            }
+                        }
+                        if (blocks == 6) {
+                            compLines++;
+                            for (fy = 1; fy < 7; fy++) {
+                                pField[fy * 128 + fx] = 0x00;
+                            }
                         }
                     }
+
+
+                    //Once play piece has been locked in, move playPiece back to the 
+                    //top middle of screen and generate a new tetromino
+                    playPiece.xPos = 0;
+                    playPiece.yPos = 3;
+                    playPiece.rotation = 0;
+                    playPiece.tetromino = genNewTet();
+                    
+                    //Scan location of new tetromino for any pixels on the game
+                    //board. If there are any, oh dear, it's game over!
+                    if(!collide(playPiece, pField, 2)){
+                        gameOver = 1;
+                    }
+
+
                 }
-
-
-                //Once play piece has been locked in, move playPiece back to the 
-                //top middle of screen and generate a new tetromino
-                playPiece.xPos = 0;
-                playPiece.yPos = 3;
-                playPiece.rotation = 0;
-                playPiece.tetromino = genNewTet();
-
 
             }
 
+
+
+            //Increment game ticker
+            ticker++;
+
+
+            /*
+             ***********************************************
+             * Render Output                               *
+             ***********************************************
+             */
+            drawField(pField, screen);
+            drawTetromino(playPiece, screen);
+            drawScreenBuf(screen);
         }
 
-
-
-        //Increment game ticker
-        ticker++;
-
-
-        /*
-         ***********************************************
-         * Render Output                               *
-         ***********************************************
-         */
-        drawField(pField, screen);
-        drawTetromino(playPiece, screen);
-        drawScreenBuf(screen);
+        
+        //ToDo: when gameover, display try again?
+        
     }
-
     return 0;
 }
