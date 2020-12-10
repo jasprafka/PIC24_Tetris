@@ -23,7 +23,7 @@
 #include "xc.h"
 #include "PIC24_setup.h"
 #include "LCD_setup.h"
-#include "tetris_pieces.h"
+#include "sprite.h"
 #include <stdlib.h>
 
 /*
@@ -387,30 +387,30 @@ unsigned char zPiece[4][128] = {
     }
 };
 
-void titleAnimation(curTetromino playPiece, unsigned char screen[1024], unsigned char pField[1024]) {
+void titleAnimation(sprite playPiece, unsigned char screen[1024], unsigned char pField[1024]) {
     int x;
     while (1) {
         switch (x) {
             case 0:
-                playPiece.tetromino = longPiece[playPiece.rotation];
+                playPiece.image = longPiece[playPiece.rotation];
                 break;
             case 1:
-                playPiece.tetromino = L1Piece[playPiece.rotation];
+                playPiece.image = L1Piece[playPiece.rotation];
                 break;
             case 2:
-                playPiece.tetromino = sPiece[playPiece.rotation];
+                playPiece.image = sPiece[playPiece.rotation];
                 break;
             case 3:
-                playPiece.tetromino = squarePiece[playPiece.rotation];
+                playPiece.image = squarePiece[playPiece.rotation];
                 break;
             case 4:
-                playPiece.tetromino = L2Piece[playPiece.rotation];
+                playPiece.image = L2Piece[playPiece.rotation];
                 break;
             case 5:
-                playPiece.tetromino = tPiece[playPiece.rotation];
+                playPiece.image = tPiece[playPiece.rotation];
                 break;
             case 6:
-                playPiece.tetromino = zPiece[playPiece.rotation];
+                playPiece.image = zPiece[playPiece.rotation];
                 break;
         }
 
@@ -423,7 +423,7 @@ void titleAnimation(curTetromino playPiece, unsigned char screen[1024], unsigned
         }
 
         drawField(pField, screen);
-        drawTetromino(playPiece, screen);
+        drawSprite(playPiece, screen);
         drawScreenBuf(screen);
     }
 }
@@ -480,11 +480,11 @@ int main(void) {
     initPlayField(pField);
 
     //Current tetris piece
-    curTetromino playPiece;
+    sprite playPiece;
     playPiece.xPos = 0;
     playPiece.yPos = 2;
     playPiece.rotation = 0;
-    playPiece.tetromino = genNewTet();
+    playPiece.image = genNewTet();
 
     //Game Logic Variables
     int ticker = 0;
@@ -533,9 +533,9 @@ int main(void) {
             //Spin tetromino 
             if (!_RA3 && collide(playPiece, pField, 3)) {
                 if (playPiece.rotation == 3) {
-                    playPiece.tetromino -= 384;
+                    playPiece.image -= 384;
                 } else {
-                    playPiece.tetromino += 128;
+                    playPiece.image += 128;
                 }
                 playPiece.rotation += playPiece.rotation == 3 ? -3 : 1;
 
@@ -568,10 +568,10 @@ int main(void) {
                             fi = ((playPiece.yPos + py) * 128 + (playPiece.xPos + px));
 
                             //Check if that block is filled in
-                            if (playPiece.tetromino[pi] == 0xff) {
+                            if (playPiece.image[pi] == 0xff) {
 
                                 //If yes, lock piece into pField
-                                pField[fi] = playPiece.tetromino[pi];
+                                pField[fi] = playPiece.image[pi];
 
                             }
                         }
@@ -602,11 +602,11 @@ int main(void) {
                     playPiece.xPos = 0;
                     playPiece.yPos = 3;
                     playPiece.rotation = 0;
-                    playPiece.tetromino = genNewTet();
-                    
+                    playPiece.image = genNewTet();
+
                     //Scan location of new tetromino for any pixels on the game
                     //board. If there are any, oh dear, it's game over!
-                    if(!collide(playPiece, pField, 2)){
+                    if (!collide(playPiece, pField, 2)) {
                         gameOver = 1;
                     }
 
@@ -627,13 +627,33 @@ int main(void) {
              ***********************************************
              */
             drawField(pField, screen);
-            drawTetromino(playPiece, screen);
+            drawSprite(playPiece, screen);
             drawScreenBuf(screen);
         }
 
-        
-        //ToDo: when gameover, display try again?
-        
+
+        //ToDo: when gameover, display try again? If the first button is 
+        //pressed, restart the game.
+        if (!_RA0) {
+            //Reset tetris piece
+            playPiece.xPos = 0;
+            playPiece.yPos = 3;
+            playPiece.rotation = 0;
+            playPiece.image = genNewTet();
+
+            //Reset screen buffer and playField
+            initScreenBuf(screen);
+            initPlayField(pField);
+            
+            //Redraw game field, tetris piece, and screen with new data
+            drawField(pField, screen);
+            drawSprite(playPiece, screen);
+            drawScreenBuf(screen);
+            
+            //Restart game
+            gameOver = false;
+        }
+
     }
     return 0;
 }

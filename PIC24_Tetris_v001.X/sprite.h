@@ -43,11 +43,11 @@ typedef struct {
     int xPos; //upper bit of column address 
     int yPos; //current page
     int rotation;
-    unsigned char *tetromino; //pixel data for tetromino piece
-} curTetromino;
+    unsigned char *image; //pixel data for tetromino piece
+} sprite;
 
-void drawTetromino(curTetromino tet, unsigned char screen[1024]);
-int collide(curTetromino tet, unsigned char pField[1024], char dir);
+void drawSprite(sprite tet, unsigned char screen[1024]);
+int collide(sprite tet, unsigned char pField[1024], char dir);
 
 
 // Comment a function and leverage automatic documentation with slash star star
