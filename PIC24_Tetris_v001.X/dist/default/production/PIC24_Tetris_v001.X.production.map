@@ -21,7 +21,7 @@ Command:
   build/default/production/PIC24_Tetris_main_v001.o \
   build/default/production/PIC24_setup.o \
   build/default/production/LCD_setup.o \
-  build/default/production/_ext/2014350538/tetris_pieces.o \
+  build/default/production/_ext/2014350538/sprite.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp24FJ64GA002.gld.00 \
   --stack=16 \
@@ -74,9 +74,9 @@ section                    address   length (PC units)   length (bytes) (dec)
 .text                        0x200               0x180           0x240  (576)
 .const                       0x380               0x800           0xc00  (3072)
 .dinit                       0xb80               0x96e           0xe25  (3621)
-.text                       0x14ee               0x7d4           0xbbe  (3006)
+.text                       0x14ee               0x84c           0xc72  (3186)
 
-                 Total "program" memory used (bytes):         0x2823  (10275) 15%
+                 Total "program" memory used (bytes):         0x28d7  (10455) 16%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -134,29 +134,29 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init
                   0x000252                  __data_init_standard
+                  0x000252                  __data_init
                   0x0002c8                  __T1Interrupt
                   0x0002e0                  __DefaultInterrupt
                   0x0002e6                  _rand
-                  0x000374                  ___mulp32peds3
                   0x000374                  ___mulp32eds3
+                  0x000374                  ___mulp32peds3
                   0x000374                  ___mulsi3
                   0x0014ee                  _titleAnimation
                   0x0015ae                  _genNewTet
                   0x001606                  _main
-                  0x0018b4                  _lcdCmd
-                  0x0018d6                  _lcdData
-                  0x0018f8                  _initLCD
-                  0x00194a                  _clearLCD
-                  0x001990                  _drawNHDLogo
-                  0x0019f2                  _initScreenBuf
-                  0x001a14                  _initPlayField
-                  0x001a80                  _drawField
-                  0x001aaa                  _drawScreenBuf
-                  0x001b08                  _drawTetromino
-                  0x001b6a                  _collide
-                  0x001c8c                  _initPIC
+                  0x00192c                  _lcdCmd
+                  0x00194e                  _lcdData
+                  0x001970                  _initLCD
+                  0x0019c2                  _clearLCD
+                  0x001a08                  _drawNHDLogo
+                  0x001a6a                  _initScreenBuf
+                  0x001a8c                  _initPlayField
+                  0x001af8                  _drawField
+                  0x001b22                  _drawScreenBuf
+                  0x001b80                  _drawSprite
+                  0x001be2                  _collide
+                  0x001d04                  _initPIC
 
 External Symbols in Program Memory (by name):
 
@@ -169,19 +169,19 @@ External Symbols in Program Memory (by name):
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00194a                  _clearLCD
-                  0x001b6a                  _collide
-                  0x001a80                  _drawField
-                  0x001990                  _drawNHDLogo
-                  0x001aaa                  _drawScreenBuf
-                  0x001b08                  _drawTetromino
+                  0x0019c2                  _clearLCD
+                  0x001be2                  _collide
+                  0x001af8                  _drawField
+                  0x001a08                  _drawNHDLogo
+                  0x001b22                  _drawScreenBuf
+                  0x001b80                  _drawSprite
                   0x0015ae                  _genNewTet
-                  0x0018f8                  _initLCD
-                  0x001c8c                  _initPIC
-                  0x001a14                  _initPlayField
-                  0x0019f2                  _initScreenBuf
-                  0x0018b4                  _lcdCmd
-                  0x0018d6                  _lcdData
+                  0x001970                  _initLCD
+                  0x001d04                  _initPIC
+                  0x001a8c                  _initPlayField
+                  0x001a6a                  _initScreenBuf
+                  0x00192c                  _lcdCmd
+                  0x00194e                  _lcdData
                   0x001606                  _main
                   0x0002e6                  _rand
                   0x0014ee                  _titleAnimation
@@ -204,7 +204,7 @@ Linker script and memory map
 LOAD build/default/production/PIC24_Tetris_main_v001.o
 LOAD build/default/production/PIC24_setup.o
 LOAD build/default/production/LCD_setup.o
-LOAD build/default/production/_ext/2014350538/tetris_pieces.o
+LOAD build/default/production/_ext/2014350538/sprite.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD pPIC24Fxxx
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libfx-elf.a
@@ -267,12 +267,12 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x20dc
+.debug_info       0x000000       0x20d2
  *(.debug_info)
- .debug_info      0x000000        0xafe build/default/production/PIC24_Tetris_main_v001.o
- .debug_info      0x000afe        0xb50 build/default/production/PIC24_setup.o
- .debug_info      0x00164e        0x7de build/default/production/LCD_setup.o
- .debug_info      0x001e2c        0x2b0 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_info      0x000000        0xb08 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_info      0x000b08        0xb50 build/default/production/PIC24_setup.o
+ .debug_info      0x001658        0x7de build/default/production/LCD_setup.o
+ .debug_info      0x001e36        0x29c build/default/production/_ext/2014350538/sprite.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x4f1
@@ -280,21 +280,21 @@ __CONFIG1
  .debug_abbrev    0x000000        0x1ec build/default/production/PIC24_Tetris_main_v001.o
  .debug_abbrev    0x0001ec         0xfa build/default/production/PIC24_setup.o
  .debug_abbrev    0x0002e6        0x16e build/default/production/LCD_setup.o
- .debug_abbrev    0x000454         0x9d build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_abbrev    0x000454         0x9d build/default/production/_ext/2014350538/sprite.o
 
-.debug_line       0x000000        0x564
+.debug_line       0x000000        0x56a
  *(.debug_line)
- .debug_line      0x000000        0x1b0 build/default/production/PIC24_Tetris_main_v001.o
- .debug_line      0x0001b0        0x130 build/default/production/PIC24_setup.o
- .debug_line      0x0002e0        0x18c build/default/production/LCD_setup.o
- .debug_line      0x00046c         0xf8 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_line      0x000000        0x1c4 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_line      0x0001c4        0x130 build/default/production/PIC24_setup.o
+ .debug_line      0x0002f4        0x18c build/default/production/LCD_setup.o
+ .debug_line      0x000480         0xea build/default/production/_ext/2014350538/sprite.o
 
 .debug_frame      0x000000        0x1f2
  *(.debug_frame)
  .debug_frame     0x000000         0x62 build/default/production/PIC24_Tetris_main_v001.o
  .debug_frame     0x000062         0x4a build/default/production/PIC24_setup.o
  .debug_frame     0x0000ac         0xfe build/default/production/LCD_setup.o
- .debug_frame     0x0001aa         0x48 build/default/production/_ext/2014350538/tetris_pieces.o
+ .debug_frame     0x0001aa         0x48 build/default/production/_ext/2014350538/sprite.o
 
 .debug_str        0x000000         0xb6
  *(.debug_str)
@@ -309,7 +309,7 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x188
+                  0x000000        0x185
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x93 build/default/production/PIC24_Tetris_main_v001.o
@@ -318,7 +318,7 @@ __CONFIG1
  .debug_pubnames
                   0x0000c2         0x96 build/default/production/LCD_setup.o
  .debug_pubnames
-                  0x000158         0x30 build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x000158         0x2d build/default/production/_ext/2014350538/sprite.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -332,7 +332,7 @@ __CONFIG1
  .debug_aranges
                   0x000030         0x18 build/default/production/LCD_setup.o
  .debug_aranges
-                  0x000048         0x18 build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x000048         0x18 build/default/production/_ext/2014350538/sprite.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -919,34 +919,34 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000060        0x254
+                  0x000060        0x248
  .debug_pubtypes
-                  0x000060         0xc5 build/default/production/PIC24_Tetris_main_v001.o
+                  0x000060         0xbf build/default/production/PIC24_Tetris_main_v001.o
  .debug_pubtypes
-                  0x000125         0xf4 build/default/production/PIC24_setup.o
+                  0x00011f         0xf4 build/default/production/PIC24_setup.o
  .debug_pubtypes
-                  0x000219         0x78 build/default/production/LCD_setup.o
+                  0x000213         0x78 build/default/production/LCD_setup.o
  .debug_pubtypes
-                  0x000291         0x23 build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x00028b         0x1d build/default/production/_ext/2014350538/sprite.o
 
 __c30_signature
-                  0x0002b4         0x30
+                  0x0002a8         0x30
  __c30_signature
-                  0x0002b4          0x6 build/default/production/PIC24_Tetris_main_v001.o
+                  0x0002a8          0x6 build/default/production/PIC24_Tetris_main_v001.o
  __c30_signature
-                  0x0002ba          0x6 build/default/production/PIC24_setup.o
+                  0x0002ae          0x6 build/default/production/PIC24_setup.o
  __c30_signature
-                  0x0002c0          0x6 build/default/production/LCD_setup.o
+                  0x0002b4          0x6 build/default/production/LCD_setup.o
  __c30_signature
-                  0x0002c6          0x6 build/default/production/_ext/2014350538/tetris_pieces.o
+                  0x0002ba          0x6 build/default/production/_ext/2014350538/sprite.o
  __c30_signature
-                  0x0002cc          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
+                  0x0002c0          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x0002d2          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
+                  0x0002c6          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x0002d8          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+                  0x0002cc          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
  __c30_signature
-                  0x0002de          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x0002d2          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
 
 .data               0x0800        0xe00
  .data              0x0800        0xe00 build/default/production/PIC24_Tetris_main_v001.o
@@ -986,23 +986,23 @@ __c30_signature
 .dinit            0x000b80        0x96e
  .dinit           0x000b80        0x96e data_init
 
-.text             0x0014ee        0x7d4
- .text            0x0014ee        0x3c6 build/default/production/PIC24_Tetris_main_v001.o
+.text             0x0014ee        0x84c
+ .text            0x0014ee        0x43e build/default/production/PIC24_Tetris_main_v001.o
                   0x0014ee                  _titleAnimation
                   0x0015ae                  _genNewTet
                   0x001606                  _main
- .text            0x0018b4        0x254 build/default/production/LCD_setup.o
-                  0x0018b4                  _lcdCmd
-                  0x0018d6                  _lcdData
-                  0x0018f8                  _initLCD
-                  0x00194a                  _clearLCD
-                  0x001990                  _drawNHDLogo
-                  0x0019f2                  _initScreenBuf
-                  0x001a14                  _initPlayField
-                  0x001a80                  _drawField
-                  0x001aaa                  _drawScreenBuf
- .text            0x001b08        0x184 build/default/production/_ext/2014350538/tetris_pieces.o
-                  0x001b08                  _drawTetromino
-                  0x001b6a                  _collide
- .text            0x001c8c         0x36 build/default/production/PIC24_setup.o
-                  0x001c8c                  _initPIC
+ .text            0x00192c        0x254 build/default/production/LCD_setup.o
+                  0x00192c                  _lcdCmd
+                  0x00194e                  _lcdData
+                  0x001970                  _initLCD
+                  0x0019c2                  _clearLCD
+                  0x001a08                  _drawNHDLogo
+                  0x001a6a                  _initScreenBuf
+                  0x001a8c                  _initPlayField
+                  0x001af8                  _drawField
+                  0x001b22                  _drawScreenBuf
+ .text            0x001b80        0x184 build/default/production/_ext/2014350538/sprite.o
+                  0x001b80                  _drawSprite
+                  0x001be2                  _collide
+ .text            0x001d04         0x36 build/default/production/PIC24_setup.o
+                  0x001d04                  _initPIC
