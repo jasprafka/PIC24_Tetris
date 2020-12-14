@@ -55,10 +55,54 @@ c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(data
                               c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
                               (__crt_start_mode_normal)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                              build/default/production/PIC24_Tetris_main_v001.o (___addsf3)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                              build/default/production/PIC24_Tetris_main_v001.o (_(float, int, long long, short, float, short, int))
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                              build/default/production/PIC24_Tetris_main_v001.o (___floatsisf)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fpack)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fixsfsi.eo) (__funpack)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__funpack2)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(futil.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo) (__fPropagateNaN)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                              build/default/production/PIC24_Tetris_main_v001.o (___mulsf3)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatsisf.eo) (___floatdisf)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatdisf.eo) (___floatundisf)
 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
                               build/default/production/PIC24_Tetris_main_v001.o (_rand)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo)
+                              build/default/production/PIC24_Tetris_main_v001.o (__sprintf_cdnopuxX)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo) (___Printf_cdnopuxX)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(memcpy.XX_eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo) (_memcpy)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(strchr.XX_eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo) (_strchr)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputtxt.XX_eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo) (__Puttxt)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xvacopy.XX_eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo) (__Vacopy)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopuxX.XXeo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo) (___Putfld_cdnopuxX)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopuxX.XXeo) (__Litob)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo) (___divsi3)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo) (___udivsi3)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo) (___umodsi3)
 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
                               c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo) (___mulsi3)
+c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                              c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo) (___udivdi3)
 
 
 xc16-ld 1.50 (B)
@@ -71,23 +115,24 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x180           0x240  (576)
-.const                       0x380               0x800           0xc00  (3072)
-.dinit                       0xb80               0x96e           0xe25  (3621)
-.text                       0x14ee               0x868           0xc9c  (3228)
+.text                        0x200               0xe10          0x1518  (5400)
+.const                      0x1010               0x804           0xc06  (3078)
+.text                       0x1814               0xcb4          0x130e  (4878)
+.dinit                      0x24c8               0x9da           0xec7  (3783)
+.text                       0x2ea2               0x40e           0x615  (1557)
 
-                 Total "program" memory used (bytes):         0x2901  (10497) 16%
+                 Total "program" memory used (bytes):         0x4908  (18696) 28%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.data                        0x800                   0           0xe00  (3584)
-.bss                        0x1600                   0            0x8a  (138)
-.data                       0x168a                   0             0x4  (4)
+.data                        0x800                   0           0xe50  (3664)
+.bss                        0x1650                   0            0x8a  (138)
+.data                       0x16da                   0            0x40  (64)
 
-                 Total "data" memory used (bytes):          0xe8e  (3726) 45%
+                 Total "data" memory used (bytes):          0xf1a  (3866) 47%
 
 
 Dynamic Memory Usage
@@ -95,9 +140,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x168e                              0x1172  (4466)
+stack                       0x171a                              0x10e6  (4326)
 
-                 Maximum dynamic memory (bytes):         0x1172  (4466)
+                 Maximum dynamic memory (bytes):         0x10e6  (4326)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -111,20 +156,40 @@ External Symbols in Data Memory (by address):
                     0x1000                  _tPiece
                     0x1200                  _sPiece
                     0x1400                  _zPiece
-                    0x1600                  __Randinit
-                    0x1602                  __Tls_setup__Randinit
-                    0x1604                  __Tls_setup__Randseed
-                    0x168a                  __Randseed
+                    0x1600                  _pixel0
+                    0x1608                  _pixel1
+                    0x1610                  _pixel2
+                    0x1618                  _pixel3
+                    0x1620                  _pixel4
+                    0x1628                  _pixel5
+                    0x1630                  _pixel6
+                    0x1638                  _pixel7
+                    0x1640                  _pixel8
+                    0x1648                  _pixel9
+                    0x1650                  __Randinit
+                    0x1652                  __Tls_setup__Randinit
+                    0x1654                  __Tls_setup__Randseed
+                    0x1716                  __Randseed
 
 External Symbols in Data Memory (by name):
 
                     0x0a00                  _L1Piece
                     0x0c00                  _L2Piece
-                    0x1600                  __Randinit
-                    0x168a                  __Randseed
-                    0x1602                  __Tls_setup__Randinit
-                    0x1604                  __Tls_setup__Randseed
+                    0x1650                  __Randinit
+                    0x1716                  __Randseed
+                    0x1652                  __Tls_setup__Randinit
+                    0x1654                  __Tls_setup__Randseed
                     0x0800                  _longPiece
+                    0x1600                  _pixel0
+                    0x1608                  _pixel1
+                    0x1610                  _pixel2
+                    0x1618                  _pixel3
+                    0x1620                  _pixel4
+                    0x1628                  _pixel5
+                    0x1630                  _pixel6
+                    0x1638                  _pixel7
+                    0x1640                  _pixel8
+                    0x1648                  _pixel9
                     0x1200                  _sPiece
                     0x0e00                  _squarePiece
                     0x1000                  _tPiece
@@ -134,57 +199,119 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init_standard
                   0x000252                  __data_init
-                  0x0002c8                  __T1Interrupt
-                  0x0002e0                  __DefaultInterrupt
-                  0x0002e6                  _rand
-                  0x000374                  ___mulp32eds3
-                  0x000374                  ___mulp32peds3
-                  0x000374                  ___mulsi3
-                  0x0014ee                  _titleAnimation
-                  0x0015ae                  _genNewTet
-                  0x001606                  _main
-                  0x001948                  _lcdCmd
-                  0x00196a                  _lcdData
-                  0x00198c                  _initLCD
-                  0x0019de                  _clearLCD
-                  0x001a24                  _drawNHDLogo
-                  0x001a86                  _initScreenBuf
-                  0x001aa8                  _initPlayField
-                  0x001b14                  _drawField
-                  0x001b3e                  _drawScreenBuf
-                  0x001b9c                  _drawSprite
-                  0x001bfe                  _collide
-                  0x001d20                  _initPIC
+                  0x000252                  __data_init_standard
+                  0x0002cc                  __T1Interrupt
+                  0x0002e4                  __DefaultInterrupt
+                  0x0002ea                  ___subsf3
+                  0x0002ec                  ___addsf3
+                  0x0003a6                  ___fixsfsi
+                  0x0003e8                  ___floatsisf
+                  0x0003ee                  __fpack
+                  0x00043a                  __funpack
+                  0x000464                  __funpack2
+                  0x000474                  __fPropagateNaN
+                  0x000486                  __fbopExit
+                  0x00048e                  __fbopReturnNaN
+                  0x000494                  ___mulsf3
+                  0x0004fc                  ___floatdisf
+                  0x00051c                  ___floatundisf
+                  0x00057a                  _rand
+                  0x000608                  sprintf_cdnopuxX.XXeo:_prout
+                  0x000616                  __sprintf_cdnopuxX
+                  0x000634                  ___Printf_cdnopuxX
+                  0x000798                  _memcpy
+                  0x0007a6                  _strchr
+                  0x0007be                  __Puttxt
+                  0x000936                  __Vacopy
+                  0x00093a                  ___Putfld_cdnopuxX
+                  0x000b5e                  __Litob
+                  0x000dbc                  ___divsi3
+                  0x000dda                  ___udivsi3
+                  0x000dfa                  ___umodsi3
+                  0x000e00                  ___mulp32peds3
+                  0x000e00                  ___mulsi3
+                  0x000e00                  ___mulp32eds3
+                  0x000e58                  ___udivmoddi3
+                  0x000f3e                  ___udivdi3
+                  0x000f4c                  ___umoddi3
+                  0x000f54                  ___divdi3
+                  0x000fb4                  ___moddi3
+                  0x001814                  _titleAnimation
+                  0x0018d4                  _writeScore
+                  0x002032                  _genNewTet
+                  0x00208a                  _main
+                  0x002ea2                  _lcdCmd
+                  0x002ec4                  _lcdData
+                  0x002ee6                  _initLCD
+                  0x002f38                  _clearLCD
+                  0x002f7e                  _drawNHDLogo
+                  0x002fe0                  _initScreenBuf
+                  0x003002                  _initPlayField
+                  0x00306e                  _drawField
+                  0x003098                  _drawScreenBuf
+                  0x0030f6                  _drawSprite
+                  0x003158                  _collide
+                  0x00327a                  _initPIC
 
 External Symbols in Program Memory (by name):
 
-                  0x0002e0                  __DefaultInterrupt
-                  0x0002c8                  __T1Interrupt
-                  0x000374                  ___mulp32eds3
-                  0x000374                  ___mulp32peds3
-                  0x000374                  ___mulsi3
+                  0x0002e4                  __DefaultInterrupt
+                  0x000b5e                  __Litob
+                  0x0007be                  __Puttxt
+                  0x0002cc                  __T1Interrupt
+                  0x000936                  __Vacopy
+                  0x000634                  ___Printf_cdnopuxX
+                  0x00093a                  ___Putfld_cdnopuxX
+                  0x0002ec                  ___addsf3
+                  0x000f54                  ___divdi3
+                  0x000dbc                  ___divsi3
+                  0x0003a6                  ___fixsfsi
+                  0x0004fc                  ___floatdisf
+                  0x0003e8                  ___floatsisf
+                  0x00051c                  ___floatundisf
+                  0x000fb4                  ___moddi3
+                  0x000e00                  ___mulp32eds3
+                  0x000e00                  ___mulp32peds3
+                  0x000494                  ___mulsf3
+                  0x000e00                  ___mulsi3
+                  0x0002ea                  ___subsf3
+                  0x000f3e                  ___udivdi3
+                  0x000e58                  ___udivmoddi3
+                  0x000dda                  ___udivsi3
+                  0x000f4c                  ___umoddi3
+                  0x000dfa                  ___umodsi3
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
+                  0x000474                  __fPropagateNaN
+                  0x000486                  __fbopExit
+                  0x00048e                  __fbopReturnNaN
+                  0x0003ee                  __fpack
+                  0x00043a                  __funpack
+                  0x000464                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0019de                  _clearLCD
-                  0x001bfe                  _collide
-                  0x001b14                  _drawField
-                  0x001a24                  _drawNHDLogo
-                  0x001b3e                  _drawScreenBuf
-                  0x001b9c                  _drawSprite
-                  0x0015ae                  _genNewTet
-                  0x00198c                  _initLCD
-                  0x001d20                  _initPIC
-                  0x001aa8                  _initPlayField
-                  0x001a86                  _initScreenBuf
-                  0x001948                  _lcdCmd
-                  0x00196a                  _lcdData
-                  0x001606                  _main
-                  0x0002e6                  _rand
-                  0x0014ee                  _titleAnimation
+                  0x000616                  __sprintf_cdnopuxX
+                  0x002f38                  _clearLCD
+                  0x003158                  _collide
+                  0x00306e                  _drawField
+                  0x002f7e                  _drawNHDLogo
+                  0x003098                  _drawScreenBuf
+                  0x0030f6                  _drawSprite
+                  0x002032                  _genNewTet
+                  0x002ee6                  _initLCD
+                  0x00327a                  _initPIC
+                  0x003002                  _initPlayField
+                  0x002fe0                  _initScreenBuf
+                  0x002ea2                  _lcdCmd
+                  0x002ec4                  _lcdData
+                  0x00208a                  _main
+                  0x000798                  _memcpy
+                  0x00057a                  _rand
+                  0x0007a6                  _strchr
+                  0x001814                  _titleAnimation
+                  0x0018d4                  _writeScore
+                  0x000608                  sprintf_cdnopuxX.XXeo:_prout
 
 Memory Configuration
 
@@ -224,7 +351,7 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x180
+.text             0x000200        0xe10
  *(.init)
  .init            0x000200         0x4c c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt0_standard.o)
                   0x000200                  __resetPRI
@@ -236,24 +363,102 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002c8         0x18 build/default/production/PIC24_setup.o
-                  0x0002c8                  __T1Interrupt
- .isr             0x0002e0          0x4 default_isr
-                  0x0002e0                  __DefaultInterrupt
+ .isr.text        0x0002cc         0x18 build/default/production/PIC24_setup.o
+                  0x0002cc                  __T1Interrupt
+ .isr             0x0002e4          0x4 default_isr
+                  0x0002e4                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x0002e4          0x2 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
-                  0x0002e4                  __crt_start_mode
-                  0x0002e4                  __crt_start_mode_normal
- .libc.rand       0x0002e6         0x8e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
-                  0x0002e6                  _rand
- .libm.mulsi3     0x000374          0xc c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
-                  0x000374                  ___mulp32peds3
-                  0x000374                  ___mulsi3
-                  0x000374                  ___mulp32eds3
+                  0x0002e8          0x2 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normal.Leo)
+                  0x0002e8                  __crt_start_mode
+                  0x0002e8                  __crt_start_mode_normal
+ .libm.subsf3     0x0002ea         0xbc c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                  0x0002ea                  ___subsf3
+                  0x0002ec                  ___addsf3
+ .libm.fixsfsi    0x0003a6         0x42 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+                  0x0003a6                  _(float, int, long long, short, float, short, int)
+ .libm.floatsisf
+                  0x0003e8          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+                  0x0003e8                  ___floatsisf
+ .libm.fpack      0x0003ee         0x4c c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x0003ee                  __fpack
+ .libm.funpack    0x00043a         0x2a c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x00043a                  __funpack
+ .libm.funpack2
+                  0x000464         0x10 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x000464                  __funpack2
+ .libm.fPropagateNaN
+                  0x000474         0x12 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x000474                  __fPropagateNaN
+ .libm.fbobExit
+                  0x000486          0x8 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x000486                  __fbopExit
+ .libm.fbopReturnNaN
+                  0x00048e          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x00048e                  __fbopReturnNaN
+ .libm.mulsf3     0x000494         0x68 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x000494                  ___mulsf3
+ .libm.floatdisf
+                  0x0004fc         0x20 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+                  0x0004fc                  ___floatdisf
+ .libm.floatundisf
+                  0x00051c         0x5e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x00051c                  ___floatundisf
+ .libc.rand       0x00057a         0x8e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+                  0x00057a                  _rand
+ .libc.prout      0x000608          0xe c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo)
+                  0x000608                  sprintf_cdnopuxX.XXeo:_prout
+ .libc._sprintf_cdnopuxX
+                  0x000616         0x1e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo)
+                  0x000616                  __sprintf_cdnopuxX
+ .libc.__Printf_cdnopuxX
+                  0x000634        0x164 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo)
+                  0x000634                  ___Printf_cdnopuxX
+ .libc.memcpy     0x000798          0xe c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(memcpy.XX_eo)
+                  0x000798                  _memcpy
+ .libc.strchr     0x0007a6         0x18 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(strchr.XX_eo)
+                  0x0007a6                  _strchr
+ .libc._Puttxt    0x0007be        0x178 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputtxt.XX_eo)
+                  0x0007be                  __Puttxt
+ .libc._Vacopy    0x000936          0x4 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xvacopy.XX_eo)
+                  0x000936                  __Vacopy
+ .libc.__Putfld_cdnopuxX
+                  0x00093a        0x224 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopuxX.XXeo)
+                  0x00093a                  ___Putfld_cdnopuxX
+ .libc._Litob     0x000b5e        0x25e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo)
+                  0x000b5e                  __Litob
+ .libm.divsi3     0x000dbc         0x1e c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+                  0x000dbc                  ___divsi3
+ .libm.udivsi3    0x000dda         0x20 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x000dda                  ___udivsi3
+ .libm.umodsi3    0x000dfa          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+                  0x000dfa                  ___umodsi3
+ .libm.mulsi3     0x000e00          0xc c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x000e00                  ___mulp32peds3
+                  0x000e00                  ___mulsi3
+                  0x000e00                  ___mulp32eds3
+ .libm.__PplusBdi
+                  0x000e0c         0x26 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+ .libm.__PminusBdi
+                  0x000e32         0x26 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+ .libm.__udivmoddi3
+                  0x000e58         0xe6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x000e58                  ___udivmoddi3
+ .libm.__udivdi3
+                  0x000f3e          0xe c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x000f3e                  ___udivdi3
+ .libm.__umoddi3
+                  0x000f4c          0x8 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x000f4c                  ___umoddi3
+ .libm.__divdi3
+                  0x000f54         0x60 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x000f54                  ___divdi3
+ .libm.__moddi3
+                  0x000fb4         0x5c c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
+                  0x000fb4                  ___moddi3
 
 usercode
  *(usercode)
@@ -267,40 +472,40 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x20d3
+.debug_info       0x000000       0x237e
  *(.debug_info)
- .debug_info      0x000000        0xb09 build/default/production/PIC24_Tetris_main_v001.o
- .debug_info      0x000b09        0xb50 build/default/production/PIC24_setup.o
- .debug_info      0x001659        0x7de build/default/production/LCD_setup.o
- .debug_info      0x001e37        0x29c build/default/production/_ext/2014350538/sprite.o
+ .debug_info      0x000000        0xdb4 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_info      0x000db4        0xb50 build/default/production/PIC24_setup.o
+ .debug_info      0x001904        0x7de build/default/production/LCD_setup.o
+ .debug_info      0x0020e2        0x29c build/default/production/_ext/2014350538/sprite.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x4f1
+.debug_abbrev     0x000000        0x4fa
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x1ec build/default/production/PIC24_Tetris_main_v001.o
- .debug_abbrev    0x0001ec         0xfa build/default/production/PIC24_setup.o
- .debug_abbrev    0x0002e6        0x16e build/default/production/LCD_setup.o
- .debug_abbrev    0x000454         0x9d build/default/production/_ext/2014350538/sprite.o
+ .debug_abbrev    0x000000        0x1f5 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_abbrev    0x0001f5         0xfa build/default/production/PIC24_setup.o
+ .debug_abbrev    0x0002ef        0x16e build/default/production/LCD_setup.o
+ .debug_abbrev    0x00045d         0x9d build/default/production/_ext/2014350538/sprite.o
 
-.debug_line       0x000000        0x56d
+.debug_line       0x000000        0x675
  *(.debug_line)
- .debug_line      0x000000        0x1c7 build/default/production/PIC24_Tetris_main_v001.o
- .debug_line      0x0001c7        0x130 build/default/production/PIC24_setup.o
- .debug_line      0x0002f7        0x18c build/default/production/LCD_setup.o
- .debug_line      0x000483         0xea build/default/production/_ext/2014350538/sprite.o
+ .debug_line      0x000000        0x2cf build/default/production/PIC24_Tetris_main_v001.o
+ .debug_line      0x0002cf        0x130 build/default/production/PIC24_setup.o
+ .debug_line      0x0003ff        0x18c build/default/production/LCD_setup.o
+ .debug_line      0x00058b         0xea build/default/production/_ext/2014350538/sprite.o
 
-.debug_frame      0x000000        0x1f2
+.debug_frame      0x000000        0x226
  *(.debug_frame)
- .debug_frame     0x000000         0x62 build/default/production/PIC24_Tetris_main_v001.o
- .debug_frame     0x000062         0x4a build/default/production/PIC24_setup.o
- .debug_frame     0x0000ac         0xfe build/default/production/LCD_setup.o
- .debug_frame     0x0001aa         0x48 build/default/production/_ext/2014350538/sprite.o
+ .debug_frame     0x000000         0x96 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_frame     0x000096         0x4a build/default/production/PIC24_setup.o
+ .debug_frame     0x0000e0         0xfe build/default/production/LCD_setup.o
+ .debug_frame     0x0001de         0x48 build/default/production/_ext/2014350538/sprite.o
 
-.debug_str        0x000000         0xb6
+.debug_str        0x000000         0xc4
  *(.debug_str)
- .debug_str       0x000000         0x4f build/default/production/PIC24_Tetris_main_v001.o
- .debug_str       0x00004f         0x44 build/default/production/PIC24_setup.o
- .debug_str       0x000093         0x23 build/default/production/LCD_setup.o
+ .debug_str       0x000000         0x5d build/default/production/PIC24_Tetris_main_v001.o
+ .debug_str       0x00005d         0x44 build/default/production/PIC24_setup.o
+ .debug_str       0x0000a1         0x23 build/default/production/LCD_setup.o
 
 .debug_loc
  *(.debug_loc)
@@ -309,16 +514,16 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x185
+                  0x000000        0x202
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x93 build/default/production/PIC24_Tetris_main_v001.o
+                  0x000000        0x110 build/default/production/PIC24_Tetris_main_v001.o
  .debug_pubnames
-                  0x000093         0x2f build/default/production/PIC24_setup.o
+                  0x000110         0x2f build/default/production/PIC24_setup.o
  .debug_pubnames
-                  0x0000c2         0x96 build/default/production/LCD_setup.o
+                  0x00013f         0x96 build/default/production/LCD_setup.o
  .debug_pubnames
-                  0x000158         0x2d build/default/production/_ext/2014350538/sprite.o
+                  0x0001d5         0x2d build/default/production/_ext/2014350538/sprite.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -915,6 +1120,7 @@ LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/PIC24_Tetris_v001.X.production.elf elf32-pic30)
+LOAD jump_table
 LOAD default_isr
 LOAD data_init
 
@@ -930,7 +1136,7 @@ LOAD data_init
                   0x00028b         0x1d build/default/production/_ext/2014350538/sprite.o
 
 __c30_signature
-                  0x0002a8         0x30
+                  0x0002a8         0xb4
  __c30_signature
                   0x0002a8          0x6 build/default/production/PIC24_Tetris_main_v001.o
  __c30_signature
@@ -944,12 +1150,56 @@ __c30_signature
  __c30_signature
                   0x0002c6          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x0002cc          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+                  0x0002cc          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(addsf3.eo)
  __c30_signature
-                  0x0002d2          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+                  0x0002d2          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fixsfsi.eo)
+ __c30_signature
+                  0x0002d8          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatsisf.eo)
+ __c30_signature
+                  0x0002de          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(fpack.eo)
+ __c30_signature
+                  0x0002e4          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack.eo)
+ __c30_signature
+                  0x0002ea          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+ __c30_signature
+                  0x0002f0          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(futil.eo)
+ __c30_signature
+                  0x0002f6          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+ __c30_signature
+                  0x0002fc          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatdisf.eo)
+ __c30_signature
+                  0x000302          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+ __c30_signature
+                  0x000308          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+ __c30_signature
+                  0x00030e          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(sprintf_cdnopuxX.XXeo)
+ __c30_signature
+                  0x000314          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo)
+ __c30_signature
+                  0x00031a          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(memcpy.XX_eo)
+ __c30_signature
+                  0x000320          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(strchr.XX_eo)
+ __c30_signature
+                  0x000326          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputtxt.XX_eo)
+ __c30_signature
+                  0x00032c          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xvacopy.XX_eo)
+ __c30_signature
+                  0x000332          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xputfld_cdnopuxX.XXeo)
+ __c30_signature
+                  0x000338          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo)
+ __c30_signature
+                  0x00033e          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divsi3.eo)
+ __c30_signature
+                  0x000344          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+ __c30_signature
+                  0x00034a          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(umodsi3.eo)
+ __c30_signature
+                  0x000350          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(mulsi3.eo)
+ __c30_signature
+                  0x000356          0x6 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\libm-elf.a(divmoddi3.eo)
 
-.data               0x0800        0xe00
- .data              0x0800        0xe00 build/default/production/PIC24_Tetris_main_v001.o
+.data               0x0800        0xe50
+ .data              0x0800        0xe50 build/default/production/PIC24_Tetris_main_v001.o
                     0x0800                  _longPiece
                     0x0a00                  _L1Piece
                     0x0c00                  _L2Piece
@@ -957,16 +1207,28 @@ __c30_signature
                     0x1000                  _tPiece
                     0x1200                  _sPiece
                     0x1400                  _zPiece
+                    0x1600                  _pixel0
+                    0x1608                  _pixel1
+                    0x1610                  _pixel2
+                    0x1618                  _pixel3
+                    0x1620                  _pixel4
+                    0x1628                  _pixel5
+                    0x1630                  _pixel6
+                    0x1638                  _pixel7
+                    0x1640                  _pixel8
+                    0x1648                  _pixel9
 
-.bss                0x1600         0x8a
- .bss               0x1600         0x8a c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
-                    0x1600                  __Randinit
-                    0x1602                  __Tls_setup__Randinit
-                    0x1604                  __Tls_setup__Randseed
+.bss                0x1650         0x8a
+ .bss               0x1650         0x8a c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+                    0x1650                  __Randinit
+                    0x1652                  __Tls_setup__Randinit
+                    0x1654                  __Tls_setup__Randseed
 
-.data               0x168a          0x4
- .data              0x168a          0x4 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
-                    0x168a                  __Randseed
+.data               0x16da         0x40
+ .data              0x16da         0x22 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xlitob.XX_eo)
+ .data              0x16fc         0x1a c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(xprintf_cdnopuxX.XXeo)
+ .data              0x1716          0x4 c:/program files/microchip/xc16/v1.50/bin/bin/../../lib\liblega-c-elf.a(rand.XX_eo)
+                    0x1716                  __Randseed
 
 .config_JTAGEN    0x00abfe          0x2
  .config_JTAGEN
@@ -980,29 +1242,33 @@ __c30_signature
  .ivt._T1Interrupt
                   0x00001a          0x2 build/default/production/PIC24_setup.o
 
-.const              0x8380        0x800 load address 0x000380  
- .const             0x8380        0x800 build/default/production/LCD_setup.o
+.const              0x9010        0x804 load address 0x001010  
+ .const             0x9010        0x800 build/default/production/LCD_setup.o
+ .const             0x9810          0x4 build/default/production/PIC24_Tetris_main_v001.o
 
-.dinit            0x000b80        0x96e
- .dinit           0x000b80        0x96e data_init
+.text             0x001814        0xcb4
+ .text            0x001814        0xcb4 build/default/production/PIC24_Tetris_main_v001.o
+                  0x001814                  _titleAnimation
+                  0x0018d4                  _writeScore
+                  0x002032                  _genNewTet
+                  0x00208a                  _main
 
-.text             0x0014ee        0x868
- .text            0x0014ee        0x45a build/default/production/PIC24_Tetris_main_v001.o
-                  0x0014ee                  _titleAnimation
-                  0x0015ae                  _genNewTet
-                  0x001606                  _main
- .text            0x001948        0x254 build/default/production/LCD_setup.o
-                  0x001948                  _lcdCmd
-                  0x00196a                  _lcdData
-                  0x00198c                  _initLCD
-                  0x0019de                  _clearLCD
-                  0x001a24                  _drawNHDLogo
-                  0x001a86                  _initScreenBuf
-                  0x001aa8                  _initPlayField
-                  0x001b14                  _drawField
-                  0x001b3e                  _drawScreenBuf
- .text            0x001b9c        0x184 build/default/production/_ext/2014350538/sprite.o
-                  0x001b9c                  _drawSprite
-                  0x001bfe                  _collide
- .text            0x001d20         0x36 build/default/production/PIC24_setup.o
-                  0x001d20                  _initPIC
+.dinit            0x0024c8        0x9da
+ .dinit           0x0024c8        0x9da data_init
+
+.text             0x002ea2        0x40e
+ .text            0x002ea2        0x254 build/default/production/LCD_setup.o
+                  0x002ea2                  _lcdCmd
+                  0x002ec4                  _lcdData
+                  0x002ee6                  _initLCD
+                  0x002f38                  _clearLCD
+                  0x002f7e                  _drawNHDLogo
+                  0x002fe0                  _initScreenBuf
+                  0x003002                  _initPlayField
+                  0x00306e                  _drawField
+                  0x003098                  _drawScreenBuf
+ .text            0x0030f6        0x184 build/default/production/_ext/2014350538/sprite.o
+                  0x0030f6                  _drawSprite
+                  0x003158                  _collide
+ .text            0x00327a         0x36 build/default/production/PIC24_setup.o
+                  0x00327a                  _initPIC
