@@ -25,6 +25,7 @@
 #include "LCD_setup.h"
 #include "sprite.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /*
  ***********************************************
@@ -387,6 +388,27 @@ unsigned char zPiece[4][128] = {
     }
 };
 
+unsigned char pixel0[8] = {0x3c, 0x66, 0x66, 0x66, 0x66, 0x66, 0x3c, 0x00};
+
+unsigned char pixel1[8] = {0x18, 0x38, 0x78, 0x18, 0x18, 0x18, 0x18, 0x00};
+
+unsigned char pixel2[8] = {0x3c, 0x66, 0x06, 0x0c, 0x18, 0x30, 0x7e, 0x00};
+
+unsigned char pixel3[8] = {0x3c, 0x66, 0x06, 0x1c, 0x06, 0x66, 0x3c, 0x00};
+
+unsigned char pixel4[8] = {0x1c, 0x3c, 0x6c, 0xcc, 0xfe, 0x0c, 0x0c, 0x00};
+
+unsigned char pixel5[8] = {0x7E, 0x06, 0x7C, 0x06, 0x06, 0x66, 0x3C, 0x00};
+
+unsigned char pixel6[8] = {0x1C, 0x30, 0x60, 0x7C, 0x66, 0x66, 0x3C, 0x00};
+
+unsigned char pixel7[8] = {0x7E, 0x06, 0x06, 0x0C, 0x18, 0x18, 0x18, 0x00};
+
+unsigned char pixel8[8] = {0x3C, 0x66, 0x66, 0x3C, 0x66, 0x66, 0x3C, 0x00};
+
+unsigned char pixel9[8] = {0x3C, 0x66, 0x66, 0x3E, 0x06, 0x0C, 0x38, 0x00};
+
+//Deprecated
 void titleAnimation(sprite playPiece, unsigned char screen[1024], unsigned char pField[1024]) {
     int x;
     while (1) {
@@ -426,6 +448,271 @@ void titleAnimation(sprite playPiece, unsigned char screen[1024], unsigned char 
         drawSprite(playPiece, screen);
         drawScreenBuf(screen);
     }
+}
+
+void writeScore(int score, unsigned char screen[1024], unsigned char pField[1024]) {
+
+    initScreenBuf(pField);
+
+    char str[4];
+    int xPos = 80;
+    int yPos = 5;
+
+    sprintf(str, "%d", score);
+
+    int i, j;
+    for (i = 0; i < 4; i++) {
+        switch (str[i]) {
+            case '0':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel0[j];
+                }
+
+                yPos--;
+                break;
+            case '1':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel1[j];
+                }
+                yPos--;
+                break;
+            case '2':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel2[j];
+                }
+                yPos--;
+                break;
+            case '3':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel3[j];
+                }
+                yPos--;
+                break;
+            case '4':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel4[j];
+                }
+                yPos--;
+                break;
+            case '5':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel5[j];
+                }
+                yPos--;
+                break;
+            case '6':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel6[j];
+                }
+                yPos--;
+                break;
+            case '7':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel7[j];
+                }
+                yPos--;
+                break;
+            case '8':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel8[j];
+                }
+                yPos--;
+                break;
+            case '9':
+                for (j = 0; j < 8; j++) {
+                    pField[yPos * 128 + j + xPos] = pixel9[j];
+                }
+                yPos--;
+                break;
+
+        }
+
+    }
+
+    pField[55] = 0x00;
+    pField[56] = 0x00;
+    pField[57] = 0x00;
+    pField[58] = 0x00;
+    pField[59] = 0x00;
+    pField[60] = 0x00;
+    pField[61] = 0x00;
+    pField[62] = 0x00;
+
+    pField[183] = 0x80;
+    pField[184] = 0x98;
+    pField[185] = 0x18;
+    pField[186] = 0x00;
+    pField[187] = 0x00;
+    pField[188] = 0x18;
+    pField[189] = 0x98;
+    pField[190] = 0x80;
+
+    pField[311] = 0x1F;
+    pField[312] = 0x9F;
+    pField[313] = 0x90;
+    pField[314] = 0x9C;
+    pField[315] = 0x1C;
+    pField[316] = 0x10;
+    pField[317] = 0x9F;
+    pField[318] = 0x9F;
+
+    pField[439] = 0x1F;
+    pField[440] = 0x9F;
+    pField[441] = 0x98;
+    pField[442] = 0x9F;
+    pField[443] = 0x9F;
+    pField[444] = 0x9E;
+    pField[445] = 0x9B;
+    pField[446] = 0x19;
+
+    pField[567] = 0x1F;
+    pField[568] = 0x3F;
+    pField[569] = 0x3B;
+    pField[570] = 0x3B;
+    pField[571] = 0x3B;
+    pField[572] = 0x3B;
+    pField[573] = 0x3F;
+    pField[574] = 0x1F;
+
+    pField[695] = 0x1F;
+    pField[696] = 0x3F;
+    pField[697] = 0x30;
+    pField[698] = 0x30;
+    pField[699] = 0x30;
+    pField[700] = 0x30;
+    pField[701] = 0x3F;
+    pField[702] = 0x1F;
+
+    pField[823] = 0x1F;
+    pField[824] = 0x3F;
+    pField[825] = 0x20;
+    pField[826] = 0x3E;
+    pField[827] = 0x1F;
+    pField[828] = 0x01;
+    pField[829] = 0x3F;
+    pField[830] = 0x3E;
+
+    //game
+    pField[141] = 0x80;
+    pField[142] = 0x80;
+    pField[143] = 0x00;
+    pField[144] = 0x00;
+    pField[145] = 0x00;
+    pField[146] = 0x00;
+    pField[147] = 0x00;
+    pField[148] = 0xC0;
+    pField[149] = 0xC0;
+
+    pField[269] = 0x9F;
+    pField[270] = 0x9F;
+    pField[271] = 0x98;
+    pField[272] = 0x98;
+    pField[273] = 0x9E;
+    pField[274] = 0x9E;
+    pField[275] = 0x98;
+    pField[276] = 0x9F;
+    pField[277] = 0x9F;
+
+    pField[397] = 0x61;
+    pField[398] = 0x61;
+    pField[399] = 0x73;
+    pField[400] = 0x7F;
+    pField[401] = 0x6D;
+    pField[402] = 0x61;
+    pField[403] = 0x61;
+    pField[404] = 0x61;
+    pField[405] = 0x61;
+
+    pField[525] = 0x70;
+    pField[526] = 0x70;
+    pField[527] = 0x50;
+    pField[528] = 0xD8;
+    pField[529] = 0xF8;
+    pField[530] = 0xFC;
+    pField[531] = 0x8C;
+    pField[532] = 0x8E;
+    pField[533] = 0x06;
+
+    pField[653] = 0xF0;
+    pField[654] = 0xF8;
+    pField[655] = 0x10;
+    pField[656] = 0x00;
+    pField[657] = 0x78;
+    pField[658] = 0x19;
+    pField[659] = 0x19;
+    pField[660] = 0xFB;
+
+    pField[661] = 0xF3;
+    pField[671] = 0x31;
+    pField[672] = 0x31;
+    pField[673] = 0x30;
+    pField[674] = 0xF0;
+    pField[675] = 0xE0;
+    pField[676] = 0xE0;
+
+    pField[796] = 0x01;
+    pField[797] = 0x01;
+    pField[798] = 0x03;
+    pField[799] = 0x03;
+    pField[800] = 0x03;
+    pField[801] = 0x03;
+    pField[802] = 0x03;
+    pField[803] = 0x01;
+    pField[804] = 0x01;
+
+    //over
+    pField[284] = 0x7C;
+    pField[285] = 0x7E;
+    pField[286] = 0x66;
+    pField[287] = 0x66;
+    pField[288] = 0x7C;
+    pField[289] = 0x70;
+    pField[290] = 0x7C;
+    pField[291] = 0x6E;
+    pField[292] = 0x66;
+
+    pField[412] = 0x7E;
+    pField[413] = 0x7E;
+    pField[414] = 0x60;
+    pField[415] = 0x60;
+    pField[416] = 0x78;
+    pField[417] = 0x78;
+    pField[418] = 0x60;
+    pField[419] = 0x7F;
+    pField[420] = 0x7F;
+
+    pField[540] = 0x06;
+    pField[541] = 0x06;
+    pField[542] = 0x06;
+    pField[543] = 0x8C;
+    pField[544] = 0x8C;
+    pField[545] = 0xD8;
+    pField[546] = 0xD8;
+    pField[547] = 0x70;
+    pField[548] = 0x70;
+
+    pField[668] = 0xE6;
+    pField[669] = 0xE6;
+    pField[670] = 0xF6;
+    pField[671] = 0x33;
+    pField[672] = 0x33;
+    pField[673] = 0x31;
+    pField[674] = 0xF1;
+    pField[675] = 0xE0;
+    pField[676] = 0xE0;
+
+    pField[796] = 0x01;
+    pField[797] = 0x01;
+    pField[798] = 0x03;
+    pField[799] = 0x03;
+    pField[800] = 0x03;
+    pField[801] = 0x03;
+    pField[802] = 0x03;
+    pField[803] = 0x01;
+    pField[804] = 0x01;
+
+    drawField(pField, screen);
+    drawScreenBuf(screen);
 }
 
 unsigned char* genNewTet() {
@@ -491,7 +778,9 @@ int main(void) {
     int timeForceDown = 20;
     int pi, px, py, fi, fx, fy;
     int blocks, pieceCount = 0;
+    int score = 0;
     int gameOver = 0;
+    float pointMod = 1.0f;
 
     //Timer one setup
     //Deprecated, may or may not still be necessary
@@ -579,6 +868,10 @@ int main(void) {
 
 
                     //Check for complete lines
+                    int movePix = 0;
+                    int topFlag = 0;
+                    int topMark = 0;
+
                     for (fx = 0; fx < 120; fx++) {
                         blocks = 0;
                         if (pField[fx] == 0xff) {
@@ -587,21 +880,46 @@ int main(void) {
                                     blocks++;
                                 }
                             }
+
                         }
+
                         //If 6 blocks are filled in, line is complete
                         if (blocks == 6) {
+                            if (topFlag == 0) {
+                                topMark = fx;
+                                topFlag = 1;
+                            }
+
+                            movePix++;
 
                             //Delete complete lines
                             for (fy = 1; fy < 7; fy++) {
                                 pField[fy * 128 + fx] = 0x00;
+
                             }
                         }
+                    }
+
+                    //moving existing pieces above downwards
+                    for (fx = topMark - 1; fx >= 0; fx--) {
+                        for (fy = 6; fy > 0; fy--) {
+                            pField[(fy * 128) + fx + movePix] = pField[fy * 128 + fx];
+                        }
+
+                    }
+
+                    //Allocate points
+                    if (movePix == 32) {
+                        score += (80 * pointMod);
+                    } else {
+                        score += movePix + 10*pointMod;
                     }
 
                     //Every 5 pieces, increase the speed
                     pieceCount++;
                     if (pieceCount % 5 == 0 && timeForceDown > 1) {
                         timeForceDown--;
+                        pointMod += 1;
                     }
 
                     //Once play piece has been locked in, move playPiece back to the 
@@ -621,12 +939,9 @@ int main(void) {
 
             }
 
-
-
             //Increment game ticker
             ticker++;
-
-
+            
             /*
              ***********************************************
              * Render Output                               *
@@ -635,7 +950,7 @@ int main(void) {
             drawField(pField, screen);
             drawSprite(playPiece, screen);
             drawScreenBuf(screen);
-        }
+        }//End main game loop
 
 
         /*
@@ -644,6 +959,9 @@ int main(void) {
          ***********************************************
          */
 
+
+        writeScore(score, screen, pField);
+
         //ToDo: when gameover, display "try again?"
         if (!_RA0) {
             //Reset tetris piece
@@ -651,6 +969,10 @@ int main(void) {
             playPiece.yPos = 3;
             playPiece.rotation = 0;
             playPiece.image = genNewTet();
+
+            //Reset difficulty, score
+            pieceCount = 0;
+            score = 0;
 
             //Reset screen buffer and playField
             initScreenBuf(screen);
@@ -665,6 +987,6 @@ int main(void) {
             gameOver = false;
         }
 
-    }
+    }//Never return
     return 0;
 }
