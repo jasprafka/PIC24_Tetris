@@ -117,11 +117,11 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xe10          0x1518  (5400)
 .const                      0x1010               0x804           0xc06  (3078)
-.text                       0x1814               0xcb4          0x130e  (4878)
-.dinit                      0x24c8               0x9da           0xec7  (3783)
-.text                       0x2ea2               0x40e           0x615  (1557)
+.text                       0x1814               0xcb8          0x1314  (4884)
+.dinit                      0x24cc               0x9da           0xec7  (3783)
+.text                       0x2ea6               0x40e           0x615  (1557)
 
-                 Total "program" memory used (bytes):         0x4908  (18696) 28%
+                 Total "program" memory used (bytes):         0x490e  (18702) 28%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -241,18 +241,18 @@ External Symbols in Program Memory (by address):
                   0x0018d4                  _writeScore
                   0x002032                  _genNewTet
                   0x00208a                  _main
-                  0x002ea2                  _lcdCmd
-                  0x002ec4                  _lcdData
-                  0x002ee6                  _initLCD
-                  0x002f38                  _clearLCD
-                  0x002f7e                  _drawNHDLogo
-                  0x002fe0                  _initScreenBuf
-                  0x003002                  _initPlayField
-                  0x00306e                  _drawField
-                  0x003098                  _drawScreenBuf
-                  0x0030f6                  _drawSprite
-                  0x003158                  _collide
-                  0x00327a                  _initPIC
+                  0x002ea6                  _lcdCmd
+                  0x002ec8                  _lcdData
+                  0x002eea                  _initLCD
+                  0x002f3c                  _clearLCD
+                  0x002f82                  _drawNHDLogo
+                  0x002fe4                  _initScreenBuf
+                  0x003006                  _initPlayField
+                  0x003072                  _drawField
+                  0x00309c                  _drawScreenBuf
+                  0x0030fa                  _drawSprite
+                  0x00315c                  _collide
+                  0x00327e                  _initPIC
 
 External Symbols in Program Memory (by name):
 
@@ -292,19 +292,19 @@ External Symbols in Program Memory (by name):
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
                   0x000616                  __sprintf_cdnopuxX
-                  0x002f38                  _clearLCD
-                  0x003158                  _collide
-                  0x00306e                  _drawField
-                  0x002f7e                  _drawNHDLogo
-                  0x003098                  _drawScreenBuf
-                  0x0030f6                  _drawSprite
+                  0x002f3c                  _clearLCD
+                  0x00315c                  _collide
+                  0x003072                  _drawField
+                  0x002f82                  _drawNHDLogo
+                  0x00309c                  _drawScreenBuf
+                  0x0030fa                  _drawSprite
                   0x002032                  _genNewTet
-                  0x002ee6                  _initLCD
-                  0x00327a                  _initPIC
-                  0x003002                  _initPlayField
-                  0x002fe0                  _initScreenBuf
-                  0x002ea2                  _lcdCmd
-                  0x002ec4                  _lcdData
+                  0x002eea                  _initLCD
+                  0x00327e                  _initPIC
+                  0x003006                  _initPlayField
+                  0x002fe4                  _initScreenBuf
+                  0x002ea6                  _lcdCmd
+                  0x002ec8                  _lcdData
                   0x00208a                  _main
                   0x000798                  _memcpy
                   0x00057a                  _rand
@@ -487,12 +487,12 @@ __CONFIG1
  .debug_abbrev    0x0002ef        0x16e build/default/production/LCD_setup.o
  .debug_abbrev    0x00045d         0x9d build/default/production/_ext/2014350538/sprite.o
 
-.debug_line       0x000000        0x675
+.debug_line       0x000000        0x676
  *(.debug_line)
- .debug_line      0x000000        0x2cf build/default/production/PIC24_Tetris_main_v001.o
- .debug_line      0x0002cf        0x130 build/default/production/PIC24_setup.o
- .debug_line      0x0003ff        0x18c build/default/production/LCD_setup.o
- .debug_line      0x00058b         0xea build/default/production/_ext/2014350538/sprite.o
+ .debug_line      0x000000        0x2d0 build/default/production/PIC24_Tetris_main_v001.o
+ .debug_line      0x0002d0        0x130 build/default/production/PIC24_setup.o
+ .debug_line      0x000400        0x18c build/default/production/LCD_setup.o
+ .debug_line      0x00058c         0xea build/default/production/_ext/2014350538/sprite.o
 
 .debug_frame      0x000000        0x226
  *(.debug_frame)
@@ -1246,29 +1246,29 @@ __c30_signature
  .const             0x9010        0x800 build/default/production/LCD_setup.o
  .const             0x9810          0x4 build/default/production/PIC24_Tetris_main_v001.o
 
-.text             0x001814        0xcb4
- .text            0x001814        0xcb4 build/default/production/PIC24_Tetris_main_v001.o
+.text             0x001814        0xcb8
+ .text            0x001814        0xcb8 build/default/production/PIC24_Tetris_main_v001.o
                   0x001814                  _titleAnimation
                   0x0018d4                  _writeScore
                   0x002032                  _genNewTet
                   0x00208a                  _main
 
-.dinit            0x0024c8        0x9da
- .dinit           0x0024c8        0x9da data_init
+.dinit            0x0024cc        0x9da
+ .dinit           0x0024cc        0x9da data_init
 
-.text             0x002ea2        0x40e
- .text            0x002ea2        0x254 build/default/production/LCD_setup.o
-                  0x002ea2                  _lcdCmd
-                  0x002ec4                  _lcdData
-                  0x002ee6                  _initLCD
-                  0x002f38                  _clearLCD
-                  0x002f7e                  _drawNHDLogo
-                  0x002fe0                  _initScreenBuf
-                  0x003002                  _initPlayField
-                  0x00306e                  _drawField
-                  0x003098                  _drawScreenBuf
- .text            0x0030f6        0x184 build/default/production/_ext/2014350538/sprite.o
-                  0x0030f6                  _drawSprite
-                  0x003158                  _collide
- .text            0x00327a         0x36 build/default/production/PIC24_setup.o
-                  0x00327a                  _initPIC
+.text             0x002ea6        0x40e
+ .text            0x002ea6        0x254 build/default/production/LCD_setup.o
+                  0x002ea6                  _lcdCmd
+                  0x002ec8                  _lcdData
+                  0x002eea                  _initLCD
+                  0x002f3c                  _clearLCD
+                  0x002f82                  _drawNHDLogo
+                  0x002fe4                  _initScreenBuf
+                  0x003006                  _initPlayField
+                  0x003072                  _drawField
+                  0x00309c                  _drawScreenBuf
+ .text            0x0030fa        0x184 build/default/production/_ext/2014350538/sprite.o
+                  0x0030fa                  _drawSprite
+                  0x00315c                  _collide
+ .text            0x00327e         0x36 build/default/production/PIC24_setup.o
+                  0x00327e                  _initPIC

@@ -10,6 +10,16 @@
 #include "sprite.h"
 #include "LCD_setup.h"
 
+/**
+ * NAME: drawSprite
+ * PARAMETERS: sprite tet - a data type created by us to make it easier to track
+ *  the position and rotation of the tetris piece currently being played 
+ *  unsigned char screen[1024]- array of pixel data to draw to the screen
+ * PURPOSE: takes the sprite that is passed in and draws it in the correct 
+ *  position and orientation on the screen
+ * RETURNS: n/a
+ */
+
 void drawSprite(sprite tet, unsigned char screen[1024]) {
     unsigned int px, py;
     for (px = 0; px < 32; px++) {
@@ -20,6 +30,20 @@ void drawSprite(sprite tet, unsigned char screen[1024]) {
         }
     }
 }
+
+/**
+ * NAME: collide
+ * PARAMETERS: sprite tet - the tetris piece currently being manipulated by the player
+ *  unsigned char pField[1024] - the array of pixel data so we can check the area 
+ *  surrounding the tetris piece for possible collisions caused by movement
+ *  char dir - a character that indicates the direction that player had wanted 
+ *  the piece to move
+ * PURPOSE: takes the direction that the player wants to move the piece and 
+ *  checks if it is doable or not. If the move is doable, the function will 
+ *  return 1. If it is not doable, it will return 0
+ * RETURNS: an int which indicates whether or not the desired tetris piece 
+ *  movement is possible or not
+ */
 
 int collide(sprite tet, unsigned char pField[1024], char dir) {
 
