@@ -29,9 +29,10 @@
 
 /*
  ***********************************************
- * Pixel Data                                  *
+ * Pixel Data for Game Pieces                  *
  ***********************************************
  */
+
 
 unsigned char longPiece[4][128] = {
     {
@@ -388,6 +389,12 @@ unsigned char zPiece[4][128] = {
     }
 };
 
+/**
+ * *********************************************
+ * Pixel Data for Score                        *
+ * *********************************************
+ */
+
 unsigned char pixel0[8] = {0x3c, 0x66, 0x66, 0x66, 0x66, 0x66, 0x3c, 0x00};
 
 unsigned char pixel1[8] = {0x18, 0x38, 0x78, 0x18, 0x18, 0x18, 0x18, 0x00};
@@ -409,6 +416,19 @@ unsigned char pixel8[8] = {0x3C, 0x66, 0x66, 0x3C, 0x66, 0x66, 0x3C, 0x00};
 unsigned char pixel9[8] = {0x3C, 0x66, 0x66, 0x3E, 0x06, 0x0C, 0x38, 0x00};
 
 //Deprecated
+/**
+ * NAME: titleAnimation
+ * PARAMETERS: sprite playPiece -
+ *  unsigned char screen[1024] - array with pixel data that is to be displayed 
+ *  on the screen
+ *  unsigned char pField[1024] - array with pixel data that is used to update 
+ *  the array 'screen
+ * PURPOSE: this is a test function to see each of the pieces in every rotation 
+ *  orientation. It is in a for loop, so it will choose one piece, display it in
+ *  all 4 rotations, then move to the next piece
+ * RETURNS: never returns
+ */
+
 void titleAnimation(sprite playPiece, unsigned char screen[1024], unsigned char pField[1024]) {
     int x;
     while (1) {
@@ -449,6 +469,19 @@ void titleAnimation(sprite playPiece, unsigned char screen[1024], unsigned char 
         drawScreenBuf(screen);
     }
 }
+
+/**
+ * NAME: writeScore
+ * PARAMETERS: int score - score at the end of the game
+ *  unsigned char screen[1024] - array with pixel data that is to be displayed 
+ *  on the screen
+ *  unsigned char pField[1024] - array with pixel data that is used to update 
+ *  the array 'screen'
+ * PURPOSE: This will take the score at the end of the game and write it as a string.
+ *  Then it will take each character in that string (all integers), and write 
+ *  them onto the screen
+ * RETURNS: n/a
+ */
 
 void writeScore(int score, unsigned char screen[1024], unsigned char pField[1024]) {
 
@@ -715,6 +748,15 @@ void writeScore(int score, unsigned char screen[1024], unsigned char pField[1024
     drawScreenBuf(screen);
 }
 
+/**
+ * NAME: genNewTet
+ * PARAMETERS: n/a
+ * PURPOSE: to randomly generate a new tetris piece in its first rotation position,
+ *  which is indicated by the first array entry Pixel Data for Game Pieces
+ * RETURNS: a pointer to an unsigned char, which is indicative of the piece that
+ *  is to be randomly generated 
+ */
+
 unsigned char* genNewTet() {
     int newTet = rand() % 7;
     switch (newTet) {
@@ -973,6 +1015,7 @@ int main(void) {
             //Reset difficulty, score
             pieceCount = 0;
             score = 0;
+            timeForceDown = 20;
 
             //Reset screen buffer and playField
             initScreenBuf(screen);

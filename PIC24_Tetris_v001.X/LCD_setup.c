@@ -9,6 +9,14 @@
 #include "xc.h"
 #include "LCD_setup.h"
 
+/**
+ * NAME: lcdCMD
+ * PARAMETERS: int cmd - a command to be sent to the LCD
+ * PURPOSE: This informs the LCD that a command is going to be sent, then sends
+ *  least significant 8-bits of "cmd" as the command
+ * RETURNS: n/a
+ */
+
 void lcdCmd(int cmd) {
     LATB = 0XFFFF;
     LATB &= cmd;
@@ -22,6 +30,14 @@ void lcdCmd(int cmd) {
 
 }
 
+/**
+ * NAME: lcdData
+ * PARAMETERS: int data - a piece of data to be sent to the LCD
+ * PURPOSE: This indicates to the LCD that piece of data is to be written to the
+ *  screen, then sends the least significant 8-bits of "data" as that data
+ * RETURNS: n/a
+ */
+
 void lcdData(int data) {
     LATB = 0XFFFF;
     LATB &= data;
@@ -33,6 +49,15 @@ void lcdData(int data) {
     _LATB8 = 1; //LATB8 = CS
     _LATB11 = 1; //LATB11 = RW
 }
+
+/**
+ * NAME: initLCD
+ * PARAMETERS: n/a
+ * PURPOSE: The general initialization of the LCD screen as instructed in the 
+ * data sheet. See page 11. 
+ * https://www.digikey.com/htmldatasheets/production/832148/0/0/1/nhd-c12864lz-fsw-fbw-3v3.html
+ * RETURNS: n/a
+ */
 
 void initLCD(void) {
     _LATB9 = 0;
@@ -60,6 +85,13 @@ void initLCD(void) {
     lcdCmd(0xffaf);
 }
 
+/**
+ * NAME: clearLCD
+ * PARAMETERS: n/a
+ * PURPOSE: Clears the LCD screen, writing all pixels as "Off"
+ * RETURNS: n/a
+ */
+
 void clearLCD(void) {
     unsigned int i, j;
     unsigned int page = 0xffB0;
@@ -75,6 +107,14 @@ void clearLCD(void) {
         page++; //after 128 columns, go to next page
     }
 }
+
+/**
+ * NAME: drawNHDLogo
+ * PARAMETERS: n/a
+ * PURPOSE: An example provided by NHD to test the functionality of the screen,
+ * provides a size 1024 array that will write the NHD logo. 
+ * RETURNS: n/a
+ */
 
 void drawNHDLogo() {
     unsigned int NHD_Logo[] = {
@@ -158,6 +198,14 @@ void drawNHDLogo() {
     }
 }
 
+/**
+ * NAME: initScreenBuf
+ * PARAMETERS: unsigned char screen[1024] - an array of 8 bit numbers
+ * PURPOSE: Takes the passed in array and initializes all the values to 0, so if 
+ * the array were to be written to the screen, it would be blank
+ * RETURNS: n/a
+ */
+
 void initScreenBuf(unsigned char screen[1024]) {
     int i;
     for (i = 0; i < 1024; i++) {
@@ -165,6 +213,14 @@ void initScreenBuf(unsigned char screen[1024]) {
     }
 
 }
+
+/**
+ * NAME: initPlayField
+ * PARAMETERS: unsigned char pField[1024] - an array of 8 bit numbers
+ * PURPOSE: This creates the playing field used in our tetris game, which is a 
+ * border around the sides and the bottom
+ * RETURNS: n/a
+ */
 
 void initPlayField(unsigned char pField[1024]) {
     int fx, fy;
@@ -183,6 +239,18 @@ void initPlayField(unsigned char pField[1024]) {
 
 }
 
+/**
+ * NAME: drawField
+ * PARAMETERS: unsigned char pField[1024] - the playing field that was created 
+ *  in initPlayField
+ *  unsigned char screen[1024] - the array of pixel data that gets continually
+ *  written to the screen throughout the game
+ * PURPOSE: the 'screen' array contains the pixel data of what is being displayed
+ *  on the screen, and this function adds the playing field to that data (aka 
+ *  adds the borders so they are continually written) 
+ * RETURNS: n/a
+ */
+
 void drawField(unsigned char pField[1024], unsigned char screen[1024]) {
     int i;
     for (i = 0; i < 1024; i++) {
@@ -191,6 +259,15 @@ void drawField(unsigned char pField[1024], unsigned char screen[1024]) {
     //Could use memcpy() from std string to speed this up
 
 }
+
+/**
+ * NAME: drawScreenBuf
+ * PARAMETERS: unsigned char screen[1024] - the array of pixel data that gets continually
+ *  written to the screen throughout the game
+ * PURPOSE: updates the game screen with any changes in visuals, which will be 
+ *  in the passed 'screen' array
+ * RETURNS: n/a
+ */
 
 void drawScreenBuf(unsigned char screen[1024]) {
     unsigned int i, j, count = 0;
